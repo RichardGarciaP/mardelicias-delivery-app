@@ -1,0 +1,56 @@
+{
+  "auth": {
+    "sign_up": "Crear cuenta",
+    "sign_in": "Iniciar sesión",
+    "create_account": {
+      "title": "Crea tu cuenta",
+      "already_account": "¿Ya tienes una cuenta?"
+    },
+    "login": {
+      "title": "Ingresa a tu cuenta",
+      "forgot_password": "Olvide la contraseña"
+    },
+    "forgot_password": {
+      "title": "Olvide mi contraseña",
+      "description": "Por favor, introduzca la dirección de correo electrónico asociada a su cuenta."
+    },
+    "otp_code": {
+      "title": "Ingresa el codigo otp",
+      "description": "Se ha enviado un código de 4 dígitos a"
+    }
+  },
+  "home": {
+    "special_offers": "Ofertas especiales",
+    "most_popular": "Populares",
+    "delivering_order": "Entregando tu orden"
+  },
+  "restaurant": {
+    "detail_menu": {
+      "notes_message": "Deja un mensaje al restaurante"
+    }
+  },
+  "order": {
+    "checkout": {
+      "delivery_options": "Opciones de envio",
+      "order_summary": "Resumen de orden",
+      "others_bought": "Otros tambien compraron",
+      "payment_summary": "Resumen de pago",
+      "payment_method": "Metodo de pago"
+    }
+  },
+  "general": {
+    "typing_name": "Escribe tu nombre",
+    "typing_password": "Escribe tu contraseña",
+    "continue": "Siguiente",
+    "help": "Ayuda",
+    "email": "Correo electronico",
+    "password": "Contraseña",
+    "full_name": "Nombre completo",
+    "home": "Inicio",
+    "remember": "Recuerdame",
+    "submit": "Enviar",
+    "reset:": "Reiniciar",
+    "search": "Buscar",
+    "notifications": "Notificaciones"
+  }
+}

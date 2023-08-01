@@ -1,0 +1,56 @@
+{
+  "auth": {
+    "sign_up": "Sign Up",
+    "sign_in": "Sign In",
+    "create_account": {
+      "title": "Create your Account",
+      "already_account": "already have an account?"
+    },
+    "login": {
+      "title": "Login Your Account",
+      "forgot_password": "Forgot Password"
+    },
+    "forgot_password": {
+      "title": "Forgot Password",
+      "description": "Don't worry! it Happens. please enter the email associated with your account"
+    },
+    "otp_code": {
+      "title": "Enter Otp Code",
+      "description": "An 4 digits code has been send to"
+    }
+  },
+  "home": {
+    "special_offers": "Special Offers",
+    "most_popular": "Most Popular",
+    "delivering_order": "Delivering Your order"
+  },
+  "restaurant": {
+    "detail_menu": {
+      "notes_message": "Leave a message to the restaurant"
+    }
+  },
+  "order": {
+    "checkout": {
+      "delivery_options": "Delivery Options",
+      "order_summary": "Order Summary",
+      "others_bought": "Others also bought",
+      "payment_summary": "Payment Summary",
+      "payment_method": "Payment Method"
+    }
+  },
+  "general": {
+    "typing_name": "Typing your name",
+    "typing_password": "Typing your password",
+    "continue": "Continue",
+    "help": "Help",
+    "email": "Email address",
+    "password": "Password",
+    "full_name": "Full name",
+    "home": "Home",
+    "remember": "Remember me",
+    "submit": "Submit",
+    "reset": "Reset",
+    "search": "Search",
+    "notifications": "Notifications"
+  }
+}
