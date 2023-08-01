@@ -33,6 +33,7 @@ import EnterOtp from "@/modules/auth/enterOtp";
 import EnterNewPassword from "@/modules/auth/enterNewPassword";
 import Home from "@/modules/private/home";
 import Notifications from "@/modules/private/home/sections/notifications";
+import Favorite from "@/modules/private/home/sections/favorite";
 
 
 function App(): JSX.Element {
@@ -45,7 +46,7 @@ function App(): JSX.Element {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <Home />
+    <Favorite />
   );
 }
 

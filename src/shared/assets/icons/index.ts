@@ -13,3 +13,4 @@ export {default as shoppingBag} from './shopping-bag.png';
 export {default as shippingCart} from './shopping-cart.png';
 export {default as wallet} from './wallet.png';
 export {default as filter} from './filter.png';
+export {default as sort} from './sort.png';

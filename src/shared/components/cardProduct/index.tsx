@@ -4,6 +4,7 @@ import Typography from "@/shared/components/typography";
 import { currencyType } from "@/shared/constants/global";
 import {_styles} from './styles'
 import useDarkMode from "@/shared/hooks/useDarkMode";
+import { normalize } from "@/shared/helpers";
 
 export default function CardProduct({product}: any) {
   const {isDarkMode} = useDarkMode()
@@ -14,7 +15,7 @@ export default function CardProduct({product}: any) {
           <Image style={styles.image} resizeMode="contain" source={{uri: product.image}} />
         </View>
 
-        <View>
+        <View style={{marginTop: normalize(12)}}>
           <Typography style={styles.name} translate={false}>{product.name}</Typography>
           <Typography style={styles.category} translate={false}>{product.category}</Typography>
           <Typography style={styles.price} translate={false}>{currencyType} {product.price.toFixed(2)}</Typography>

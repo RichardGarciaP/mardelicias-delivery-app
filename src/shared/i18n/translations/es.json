@@ -22,7 +22,7 @@
   "home": {
     "special_offers": "Ofertas especiales",
     "most_popular": "Populares",
-    "delivering_order": "Entregando tu orden"
+    "favorites": "Favoritos"
   },
   "restaurant": {
     "detail_menu": {
@@ -51,6 +51,8 @@
     "submit": "Enviar",
     "reset:": "Reiniciar",
     "search": "Buscar",
-    "notifications": "Notificaciones"
+    "notifications": "Notificaciones",
+    "plant": "Plantas",
+    "sort": "Ordenar"
   }
 }
