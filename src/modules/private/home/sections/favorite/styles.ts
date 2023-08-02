@@ -27,5 +27,16 @@ export const styles = StyleSheet.create({
   },
   separator: {
     width: normalize(4)
+  },
+  titleSort: {
+    fontWeight: '700',
+    fontSize: normalize(18),
+    marginBottom: normalize(13)
+  },
+  flex1: {
+    flex: 1,
+    fontWeight: '600',
+    fontSize: normalize(16),
+    marginVertical: normalize(10)
   }
 })

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Wrapper from "@/shared/components/wrapper";
 import { ScrollView, TouchableOpacity, View } from "react-native";
 import HeaderWithIcon from "@/shared/components/headerBack";
@@ -9,9 +9,17 @@ import CardProduct from "@/shared/components/cardProduct";
 import Typography from "@/shared/components/typography";
 import Icon from "@/shared/components/icon";
 import { sort } from "@/shared/assets/icons";
+import ButtonSheet from "@/shared/components/buttonSheet";
+import RadioButtons from "@/shared/components/radioButtons";
+import { normalize } from "@/shared/helpers";
 
 export default function Favorite() {
 
+  const [openSort, setOpenSort] = useState(false)
+
+  function toggleSort() {
+    setOpenSort(!openSort)
+  }
   function renderItem(item: any, key: number) {
     return <View key={key} style={{marginRight: 4}}><CardProduct product={item} /></View>
   }
@@ -27,7 +35,7 @@ export default function Favorite() {
             <Typography style={styles.total}>{"general.plant"}</Typography>
           </View>
 
-          <TouchableOpacity style={styles.row}>
+          <TouchableOpacity onPress={toggleSort} style={styles.row}>
             <Typography style={styles.sort}>{"general.sort"}</Typography>
             <View style={styles.separator} />
             <Icon icon={sort} />
@@ -43,6 +51,69 @@ export default function Favorite() {
           />
         </View>
       </ScrollView>
+
+      <ButtonSheet onClose={toggleSort} dispatch={openSort}>
+          <View style={{
+            padding: normalize(20)
+          }}>
+            <View>
+              <Typography style={styles.titleSort}>Sort by</Typography>
+            </View>
+
+            <View>
+                <RadioButtons
+                  columns={1}
+                  options={[
+                    {
+                      id: '1',
+                      active: true,
+                      CustomLabel: (
+                        <Typography style={styles.flex1}>
+                          Latest Saved
+                        </Typography>
+                      )
+                    },
+                    {
+                      id: '2',
+                      active: false,
+                      CustomLabel: (
+                        <Typography style={styles.flex1}>
+                          Longest Saved
+                        </Typography>
+                      )
+                    },
+                    {
+                      id: '3',
+                      active: false,
+                      CustomLabel: (
+                        <Typography style={styles.flex1}>
+                          Most Reviews
+                        </Typography>
+                      )
+                    },
+                    {
+                      id: '4',
+                      active: false,
+                      CustomLabel: (
+                        <Typography style={styles.flex1}>
+                          Highest Price
+                        </Typography>
+                      )
+                    },
+                    {
+                      id: '5',
+                      active: false,
+                      CustomLabel: (
+                        <Typography style={styles.flex1}>
+                          Lowest Price
+                        </Typography>
+                      )
+                    },
+                  ]}
+                />
+            </View>
+          </View>
+      </ButtonSheet>
     </Wrapper>
   )
 }
