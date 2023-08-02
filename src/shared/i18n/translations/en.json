@@ -55,6 +55,7 @@
     "search": "Search",
     "notifications": "Notifications",
     "plant": "Plant",
-    "sort": "Sort"
+    "sort": "Sort",
+    "description": "Description"
   }
 }

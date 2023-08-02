@@ -35,6 +35,7 @@ import Home from "@/modules/private/home";
 import Notifications from "@/modules/private/home/sections/notifications";
 import Favorite from "@/modules/private/home/sections/favorite";
 import PlantList from "@/modules/private/plantList";
+import DetailPlant from "@/modules/private/detailPlant";
 
 
 function App(): JSX.Element {
@@ -47,7 +48,7 @@ function App(): JSX.Element {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <PlantList />
+    <DetailPlant />
   );
 }
 

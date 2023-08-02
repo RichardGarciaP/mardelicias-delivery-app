@@ -8,7 +8,7 @@ import {styles} from './styles'
 export const MOCKUP_PRODUCTS = [
   {
     id: '1',
-    image: 'https://i.ibb.co/mzk6Zn0/Img.png',
+    image: 'https://i.ibb.co/5Tk0vKM/Img-1.png',
     name: 'Variegated snake',
     category: 'Indoor',
     price: 20.00
