@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
   body: {
     justifyContent: 'center',
     flex: 1,
-    paddingHorizontal: normalize(14)
+    paddingHorizontal: normalize(14),
+    backgroundColor: 'white'
   }
 })

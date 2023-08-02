@@ -36,7 +36,60 @@ import Notifications from "@/modules/private/home/sections/notifications";
 import Favorite from "@/modules/private/home/sections/favorite";
 import PlantList from "@/modules/private/plantList";
 import DetailPlant from "@/modules/private/detailPlant";
+import { createStackNavigator } from "@react-navigation/stack";
+import RoutesStack, { RootStackParamList } from "@/shared/routes/stack";
+import RoutesTab from '@/shared/routes/tab';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import Typography from "@/shared/components/typography";
+import { normalize } from "@/shared/helpers";
+import { palette, semantic } from "@/shared/constants/colors";
+import Icon from "@/shared/components/icon";
 
+const Stack = createStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator();
+
+function TabNavigation() {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      {RoutesTab.map(route => (
+        <Tab.Screen
+          key={route.name}
+          name={route.name}
+          component={route.component}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <Icon
+                  customStyles={{
+                    tintColor: focused
+                      ? palette.main.p500
+                      : semantic.text.grey,
+                  }}
+                  icon={route.icon}
+                />
+              );
+            },
+            tabBarLabel: ({focused}) => {
+              return (
+                <Typography
+                  style={{
+                    fontSize: normalize(12),
+                    fontWeight: '700',
+                    color: focused
+                      ? palette.main.p500
+                      : semantic.text.grey,
+                  }}>
+                  {route.displayName}
+                </Typography>
+              );
+            },
+          }}
+        />
+      ))}
+    </Tab.Navigator>
+  );
+}
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -48,7 +101,22 @@ function App(): JSX.Element {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <DetailPlant />
+    <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName={'welcome'}
+          screenOptions={{headerShown: false}}>
+          <Stack.Screen name="tab" component={TabNavigation} />
+          {RoutesStack.map(route => {
+            return (
+              <Stack.Screen
+                key={route.path}
+                name={route.path}
+                component={route.component}
+              />
+            );
+          })}
+        </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

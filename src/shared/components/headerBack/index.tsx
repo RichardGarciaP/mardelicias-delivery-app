@@ -4,15 +4,17 @@ import Icon from "@/shared/components/icon";
 import { arrowBack } from "@/shared/assets/icons";
 import Typography from "@/shared/components/typography";
 import {styles} from './styles'
+import { useNavigation } from "@react-navigation/native";
 
 interface HeaderBackProps {
   title?: string;
   icon?: React.ReactNode | undefined;
 }
 export default function HeaderWithIcon({title, icon}: HeaderBackProps) {
+  const {goBack} = useNavigation()
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={goBack}>
         {icon ? icon : (
           <Icon icon={arrowBack} />
         )}

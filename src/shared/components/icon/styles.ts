@@ -12,6 +12,5 @@ export const _styles = ({width, height, isDarkMode}: Sizes) =>
     icon: {
       width: width || normalize(24),
       height: height || normalize(24),
-      tintColor: isDarkMode ? semantic.background.white.w500 : semantic.background.dark.d500
     },
   });

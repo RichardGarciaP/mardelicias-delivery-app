@@ -9,8 +9,16 @@ import { Button } from "@/shared/components/buttons";
 import Typography from "@/shared/components/typography";
 import Wrapper from "@/shared/components/wrapper";
 import CheckBox from "@/shared/components/checkbox";
+import { useNavigation } from "@react-navigation/native";
+import { NavigationProps } from "@/shared/routes/stack";
 
 export default function Login() {
+  const navigation = useNavigation<NavigationProps>();
+
+  function doLogin() {
+    // @ts-ignore
+    navigation.navigate('tab')
+  }
   return (
     <Wrapper>
       <View style={styles.container}>
@@ -46,7 +54,7 @@ export default function Login() {
         </View>
 
         <View style={styles.formControl}>
-          <Button title={"auth.sign_in"} />
+          <Button onPress={doLogin} title={"auth.sign_in"} />
         </View>
       </View>
     </Wrapper>
