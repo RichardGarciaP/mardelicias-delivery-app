@@ -63,5 +63,22 @@ export const _styles = (isDarkMode: boolean) => StyleSheet.create({
   description: {
     lineHeight: 16,
     marginTop: normalize(10)
+  },
+  quantity: {
+    fontWeight: '700',
+    fontSize: normalize(18)
+  },
+  valueVariant: {
+    marginTop: normalize(18),
+    fontWeight: '700'
+  },
+  price: {
+    fontSize: normalize(18),
+    fontWeight: '700'
+  },
+  total: {
+    fontSize: normalize(24),
+    fontWeight: '700',
+    marginTop: normalize(12)
   }
 })

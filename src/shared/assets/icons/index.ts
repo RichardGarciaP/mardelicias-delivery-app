@@ -16,3 +16,5 @@ export {default as filter} from './filter.png';
 export {default as sort} from './sort.png';
 export {default as like} from './like.png';
 export {default as star} from './star.png';
+export {default as Minus} from './minus-square.png';
+export {default as Plus} from './plus-square.png';

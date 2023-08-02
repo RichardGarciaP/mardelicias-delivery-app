@@ -1,19 +1,22 @@
 import React from 'react';
 import Wrapper from "@/shared/components/wrapper";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import {_styles} from './styles'
 import Header from "./components/header";
 import useDarkMode from "@/shared/hooks/useDarkMode";
 import Typography from "@/shared/components/typography";
 import Icon from "@/shared/components/icon";
-import { star, shippingCart } from "@/shared/assets/icons";
+import { star, shippingCart, shoppingBag } from "@/shared/assets/icons";
+import Counter from "@/shared/components/counter";
+import { currencyType } from "@/shared/constants/global";
+import { Button } from "@/shared/components/buttons";
 
 export default function DetailPlant() {
   const {isDarkMode} = useDarkMode()
   const styles = _styles(isDarkMode)
   return (
     <Wrapper>
-      <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         <Header />
         <View style={styles.containerImage}>
           <Image resizeMode="contain" style={styles.image} source={{uri: 'https://i.ibb.co/5Tk0vKM/Img-1.png'}} />
@@ -52,7 +55,41 @@ export default function DetailPlant() {
             This tropical house plant is a structural sensation within your home or office decor. It’s variegated leaves show off dark green to lighter greenish-gray horizontal bands with light yellow margins. Read More
           </Typography>
         </View>
-      </View>
+
+        <View style={styles.containerName}>
+          <View>
+            <Typography translate={false}>Size</Typography>
+            <Typography style={styles.valueVariant} translate={false}>Medium</Typography>
+          </View>
+          <View>
+            <Typography translate={false}>Plant</Typography>
+            <Typography style={styles.valueVariant} translate={false}>ZZ plant</Typography>
+          </View>
+          <View>
+            <Typography translate={false}>Hight</Typography>
+            <Typography style={styles.valueVariant} translate={false}>20.5"</Typography>
+          </View>
+          <View>
+            <Typography translate={false}>Humidnity</Typography>
+            <Typography style={styles.valueVariant} translate={false}>80%</Typography>
+          </View>
+        </View>
+
+        <View style={styles.containerName}>
+          <Typography style={styles.quantity}>{"general.quantity"}</Typography>
+          <Counter onChange={() => console.log('juga')} />
+        </View>
+
+        <View style={styles.containerName}>
+          <View style={{flex: 1,}}>
+            <Typography style={styles.price}>{"general.price"}</Typography>
+            <Typography style={styles.total} translate={false}>{currencyType} 20.00</Typography>
+          </View>
+          <View style={{flex: 1}}>
+            <Button leftIcon={<Icon customStyles={{tintColor: 'white'}} icon={shoppingBag} />} title={"general.buy_now"} />
+          </View>
+        </View>
+      </ScrollView>
     </Wrapper>
   )
 }

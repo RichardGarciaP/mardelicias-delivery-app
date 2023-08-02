@@ -56,6 +56,9 @@
     "notifications": "Notificaciones",
     "plant": "Plantas",
     "sort": "Ordenar",
-    "description": "Descripción"
+    "description": "Descripción",
+    "quantity": "Cantidad",
+    "price": "Precio",
+    "buy_now": "Comprar ahora"
   }
 }
