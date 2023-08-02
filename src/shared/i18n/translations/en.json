@@ -22,7 +22,11 @@
   "home": {
     "special_offers": "Special Offers",
     "most_popular": "Most Popular",
-    "favorites": "Favorites"
+    "favorites": {
+      "title": "Favorites",
+      "empty_title": "Not Favorite yet",
+      "empty_description": "You don't have a favorite plant list yet"
+    }
   },
   "restaurant": {
     "detail_menu": {

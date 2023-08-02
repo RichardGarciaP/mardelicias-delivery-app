@@ -12,6 +12,7 @@ import { sort } from "@/shared/assets/icons";
 import ButtonSheet from "@/shared/components/buttonSheet";
 import RadioButtons from "@/shared/components/radioButtons";
 import { normalize } from "@/shared/helpers";
+import EmptyState from "@/modules/private/home/sections/favorite/components/emptyState";
 
 export default function Favorite() {
 
@@ -23,33 +24,45 @@ export default function Favorite() {
   function renderItem(item: any, key: number) {
     return <View key={key} style={{marginRight: 4}}><CardProduct product={item} /></View>
   }
+
+  function renderListOrEmptyState() {
+
+    if (MOCKUP_PRODUCTS.length > 0) {
+      return (
+        <>
+          <View style={styles.containerInfo}>
+            <View style={styles.row}>
+              <Typography style={styles.total} translate={false}>{MOCKUP_PRODUCTS.length}</Typography>
+              <View style={styles.separator} />
+              <Typography style={styles.total}>{"general.plant"}</Typography>
+            </View>
+
+            <TouchableOpacity onPress={toggleSort} style={styles.row}>
+              <Typography style={styles.sort}>{"general.sort"}</Typography>
+              <View style={styles.separator} />
+              <Icon icon={sort} />
+            </TouchableOpacity>
+          </View>
+
+          <View>
+            <List
+              between
+              data={MOCKUP_PRODUCTS}
+              rows={2}
+              renderItem={renderItem}
+            />
+          </View>
+        </>
+      )
+    }
+    return <EmptyState />
+  }
   return (
     <Wrapper>
       <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-        <HeaderWithIcon title={"home.favorites"} />
+        <HeaderWithIcon title={"home.favorites.title"} />
 
-        <View style={styles.containerInfo}>
-          <View style={styles.row}>
-            <Typography style={styles.total} translate={false}>{MOCKUP_PRODUCTS.length}</Typography>
-            <View style={styles.separator} />
-            <Typography style={styles.total}>{"general.plant"}</Typography>
-          </View>
-
-          <TouchableOpacity onPress={toggleSort} style={styles.row}>
-            <Typography style={styles.sort}>{"general.sort"}</Typography>
-            <View style={styles.separator} />
-            <Icon icon={sort} />
-          </TouchableOpacity>
-        </View>
-
-        <View>
-          <List
-            between
-            data={MOCKUP_PRODUCTS}
-            rows={2}
-            renderItem={renderItem}
-          />
-        </View>
+        {renderListOrEmptyState()}
       </ScrollView>
 
       <ButtonSheet onClose={toggleSort} dispatch={openSort}>
