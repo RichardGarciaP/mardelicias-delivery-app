@@ -28,10 +28,8 @@
       "empty_description": "You don't have a favorite plant list yet"
     }
   },
-  "restaurant": {
-    "detail_menu": {
-      "notes_message": "Leave a message to the restaurant"
-    }
+  "list_plant": {
+    "title": "Available Plant"
   },
   "order": {
     "checkout": {

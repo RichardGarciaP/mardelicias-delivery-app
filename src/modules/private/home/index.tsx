@@ -7,8 +7,8 @@ import Icon from "@/shared/components/icon";
 import { filter, search } from "@/shared/assets/icons";
 import {styles} from './styles'
 import SpecialOffers from "@/modules/private/home/components/specialOffers";
-import Categories from "@/modules/private/home/components/categories";
 import MostPopular from "@/modules/private/home/components/mostPopular";
+import Categories from "@/shared/components/categories";
 
 export default function Home() {
 
