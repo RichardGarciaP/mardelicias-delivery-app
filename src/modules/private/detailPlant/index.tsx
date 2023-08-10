@@ -10,8 +10,11 @@ import { star, shippingCart, shoppingBag } from "@/shared/assets/icons";
 import Counter from "@/shared/components/counter";
 import { currencyType } from "@/shared/constants/global";
 import { Button } from "@/shared/components/buttons";
+import { useNavigation } from "@react-navigation/native";
+import { NavigationProps } from "@/shared/routes/stack";
 
 export default function DetailPlant() {
+  const {navigate} = useNavigation<NavigationProps>()
   const {isDarkMode} = useDarkMode()
   const styles = _styles(isDarkMode)
   return (
@@ -36,7 +39,7 @@ export default function DetailPlant() {
             <Typography>Sold</Typography>
           </View>
           <View style={styles.separator} />
-          <View style={styles.row}>
+          <TouchableOpacity onPress={() => navigate('reviews')} style={styles.row}>
             <Icon customStyles={styles.sizeStar} icon={star} />
             <View style={styles.space} />
             <View style={styles.space} />
@@ -45,7 +48,7 @@ export default function DetailPlant() {
             <Typography translate={false}>(3242</Typography>
             <View style={styles.space} />
             <Typography>Review )</Typography>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.containerDescription}>

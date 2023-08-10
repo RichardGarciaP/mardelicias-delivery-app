@@ -10,6 +10,9 @@ import ForgotPassword from "@/modules/auth/forgotPassword";
 import Welcome from "@/modules/auth/welcome";
 import DetailPlant from "@/modules/private/detailPlant";
 import PlantList from "@/modules/private/plantList";
+import Favorite from "@/modules/private/home/sections/favorite";
+import Notifications from "@/modules/private/home/sections/notifications";
+import Reviews from "@/modules/private/detailPlant/sections/reviews";
 
 export type RootStackParamList = {
   login: undefined;
@@ -20,6 +23,9 @@ export type RootStackParamList = {
   welcome: undefined;
   detailPlant: undefined;
   plantList: undefined;
+  favorites: undefined;
+  notifications: undefined;
+  reviews: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -72,6 +78,21 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'plantList',
     component: PlantList,
+    private: true,
+  },
+  {
+    path: 'favorites',
+    component: Favorite,
+    private: true,
+  },
+  {
+    path: 'notifications',
+    component: Notifications,
+    private: true,
+  },
+  {
+    path: 'reviews',
+    component: Reviews,
     private: true,
   },
 ];

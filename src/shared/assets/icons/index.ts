@@ -19,3 +19,5 @@ export {default as star} from './star.png';
 export {default as Minus} from './minus-square.png';
 export {default as Plus} from './plus-square.png';
 export {default as home} from './home.png';
+export {default as likeReview} from './like-review.png';
+export {default as unlike} from './unlike.png';
