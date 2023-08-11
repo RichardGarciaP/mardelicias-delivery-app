@@ -45,11 +45,13 @@ import Typography from "@/shared/components/typography";
 import { normalize } from "@/shared/helpers";
 import { palette, semantic } from "@/shared/constants/colors";
 import Icon from "@/shared/components/icon";
+import useDarkMode from "@/shared/hooks/useDarkMode";
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 function TabNavigation() {
+  const {isDarkMode} = useDarkMode()
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
       {RoutesTab.map(route => (
@@ -58,6 +60,9 @@ function TabNavigation() {
           name={route.name}
           component={route.component}
           options={{
+            tabBarStyle: {
+              backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500,
+            },
             tabBarIcon: ({focused}) => {
               return (
                 <Icon
@@ -71,18 +76,7 @@ function TabNavigation() {
               );
             },
             tabBarLabel: ({focused}) => {
-              return (
-                <Typography
-                  style={{
-                    fontSize: normalize(12),
-                    fontWeight: '700',
-                    color: focused
-                      ? palette.main.p500
-                      : semantic.text.grey,
-                  }}>
-                  {route.displayName}
-                </Typography>
-              );
+              return null;
             },
           }}
         />

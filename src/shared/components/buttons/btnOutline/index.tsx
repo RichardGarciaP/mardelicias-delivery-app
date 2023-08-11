@@ -4,6 +4,7 @@ import {_styles} from './styles';
 import Typography from '@/shared/components/typography';
 import {GestureResponderEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 import { semantic } from "@/shared/constants/colors";
+import useDarkMode from "@/shared/hooks/useDarkMode";
 
 interface ButtonProps {
   disabled?: boolean | undefined;
@@ -19,7 +20,8 @@ export default function ButtonOutline({
   onPress,
   loading,
 }: ButtonProps) {
-  const styles = _styles(disabled);
+  const {isDarkMode} = useDarkMode()
+  const styles = _styles(disabled, isDarkMode);
   return (
     <TouchableOpacity disabled={disabled} onPress={onPress} style={styles.container}>
       {leftIcon && leftIcon}

@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
 import { normalize } from "@/shared/helpers";
+import { semantic } from "@/shared/constants/colors";
 
-export const styles = StyleSheet.create({
+export const _styles = (isDarkMode: boolean) => StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -9,6 +10,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
     paddingHorizontal: normalize(14),
-    backgroundColor: 'white'
+    backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500
   }
 })

@@ -5,6 +5,7 @@ import {
   user as UserIcon,
   shoppingBag
 } from "@/shared/assets/icons";
+import Cart from "@/modules/private/cart";
 
 export default [
   {
@@ -19,7 +20,7 @@ export default [
     displayName: 'general.bag',
     name: 'shop',
     icon: shippingCart,
-    component: Home,
+    component: Cart,
   },
   {
     id: '3',

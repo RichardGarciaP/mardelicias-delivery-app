@@ -11,42 +11,48 @@ export const MOCKUP_PRODUCTS = [
     image: 'https://i.ibb.co/5Tk0vKM/Img-1.png',
     name: 'Variegated snake',
     category: 'Indoor',
-    price: 20.00
+    price: 20.00,
+    size: 'Medium'
   },
   {
     id: '3',
     image: 'https://i.ibb.co/H2HKBWK/Img-3.png',
     name: 'Strelitzia Nicolai',
     category: 'Indoor',
-    price: 25.00
+    price: 25.00,
+    size: 'Medium'
   },
   {
     id: '4',
     image: 'https://i.ibb.co/TbTvJpf/Img-4.png',
     name: 'Sansevieria Care',
     category: 'Indoor',
-    price: 23.00
+    price: 23.00,
+    size: 'Medium'
   },
   {
     id: '5',
     image: 'https://i.ibb.co/BtqZ0NQ/Img-6.png',
     name: "Lady's Bedstraw",
     category: 'Indoor',
-    price: 40.00
+    price: 40.00,
+    size: 'Medium'
   },
   {
     id: '2',
     image: 'https://i.ibb.co/XVKwc8Z/Img-2.png',
     name: 'Zamioculcas Zamiifolia',
     category: 'Indoor',
-    price: 30.00
+    price: 30.00,
+    size: 'Medium'
   },
   {
     id: '6',
     image: 'https://i.ibb.co/K9FLKC0/Img.png',
     name: 'Croton Petra',
     category: 'Indoor',
-    price: 10.00
+    price: 10.00,
+    size: 'Medium'
   },
 ]
 export default function MostPopular() {

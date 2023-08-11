@@ -38,7 +38,7 @@ export const _styles = (isDarkMode: boolean) => StyleSheet.create({
   sold: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: semantic.fill.f04,
+    backgroundColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     paddingHorizontal: normalize(12),
     paddingVertical: normalize(4),
     borderRadius: normalize(4)

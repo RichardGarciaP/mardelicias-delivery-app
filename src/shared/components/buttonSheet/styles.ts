@@ -4,7 +4,7 @@ import { palette, semantic } from "@/shared/constants/colors";
 
 const modal = (isDarkMode: boolean, height: number) => {
   const objectModal = {
-    backgroundColor: semantic.background.white.w500,
+    backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500,
     borderTopRightRadius: normalize(16),
     borderTopLeftRadius: normalize(16),
     shadowColor: '#000',

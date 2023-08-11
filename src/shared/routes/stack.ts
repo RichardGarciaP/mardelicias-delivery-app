@@ -13,6 +13,7 @@ import PlantList from "@/modules/private/plantList";
 import Favorite from "@/modules/private/home/sections/favorite";
 import Notifications from "@/modules/private/home/sections/notifications";
 import Reviews from "@/modules/private/detailPlant/sections/reviews";
+import Cart from "@/modules/private/cart";
 
 export type RootStackParamList = {
   login: undefined;

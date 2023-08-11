@@ -15,9 +15,7 @@ export default function HeaderWithIcon({title, icon}: HeaderBackProps) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={goBack}>
-        {icon ? icon : (
-          <Icon icon={arrowBack} />
-        )}
+        <Icon icon={icon ? icon : arrowBack} />
       </TouchableOpacity>
       {title && (
         <Typography style={styles.title}>{title}</Typography>

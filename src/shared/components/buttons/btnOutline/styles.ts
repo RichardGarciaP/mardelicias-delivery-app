@@ -3,10 +3,10 @@ import {palette, semantic} from '@/shared/constants/colors';
 import {normalize} from '@/shared/helpers';
 import * as domain from "domain";
 
-export const _styles = (disabled: boolean | undefined) =>
+export const _styles = (disabled: boolean | undefined, isDarkMode: boolean) =>
   StyleSheet.create({
     container: {
-      backgroundColor: semantic.background.white.w500,
+      backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500,
       paddingHorizontal: normalize(10),
       paddingVertical: normalize(16),
       borderRadius: normalize(16),
