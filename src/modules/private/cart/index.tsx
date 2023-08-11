@@ -10,7 +10,7 @@ import { Button, ButtonOutline } from "@/shared/components/buttons";
 import { normalize } from "@/shared/helpers";
 import ButtonSheet from "@/shared/components/buttonSheet";
 import Typography from "@/shared/components/typography";
-import {styles} from './index'
+import {styles} from './styles'
 
 export default function Cart() {
   const [openDeleteItem, setOpenDeleteItem] = useState(false)
