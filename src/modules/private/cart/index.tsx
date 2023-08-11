@@ -33,6 +33,7 @@ export default function Cart() {
       <View style={{flex: 1, paddingHorizontal: normalize(24)}}>
         <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1}}>
           <HeaderWithIcon icon={shoppingBag} title="cart.title" />
+          <View style={{height: normalize(32)}} />
           <List
             between
             data={MOCKUP_PRODUCTS}
