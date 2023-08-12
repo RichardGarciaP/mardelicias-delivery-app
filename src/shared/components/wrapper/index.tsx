@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, View } from "react-native";
+import { Platform, ScrollView, View } from "react-native";
 import OverlayLoader from "@/shared/components/overlayLoader";
 import CustomStatusBar from "@/shared/components/customStatusBar";
 import { StatusBarStyle } from "react-native/Libraries/Components/StatusBar/StatusBar";
@@ -21,7 +21,9 @@ export default function Wrapper({children, backgroundColorStatusBar, barStyle, l
       <OverlayLoader loading={loading} title={titleLoader} />
       <CustomStatusBar barStyle={barStyle} backgroundColor={backgroundColorStatusBar} />
       <View style={{height: normalize(32)}} />
-      {children}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {children}
+      </ScrollView>
       {Platform.OS === 'ios' && (
         <View style={{height: normalize(20)}} />
       )}

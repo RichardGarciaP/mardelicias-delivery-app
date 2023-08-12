@@ -13,7 +13,7 @@ import PlantList from "@/modules/private/plantList";
 import Favorite from "@/modules/private/home/sections/favorite";
 import Notifications from "@/modules/private/home/sections/notifications";
 import Reviews from "@/modules/private/detailPlant/sections/reviews";
-import Cart from "@/modules/private/cart/styles";
+import Checkout from "@/modules/private/checkout";
 
 export type RootStackParamList = {
   login: undefined;
@@ -27,6 +27,7 @@ export type RootStackParamList = {
   favorites: undefined;
   notifications: undefined;
   reviews: undefined;
+  checkout: undefined
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -94,6 +95,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'reviews',
     component: Reviews,
+    private: true,
+  },
+  {
+    path: 'checkout',
+    component: Checkout,
     private: true,
   },
 ];
