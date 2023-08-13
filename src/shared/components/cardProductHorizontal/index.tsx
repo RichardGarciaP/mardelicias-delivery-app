@@ -10,7 +10,7 @@ import Counter from "@/shared/components/counter";
 import Icon from "@/shared/components/icon";
 import { trash } from "@/shared/assets/icons";
 
-export default function CardProductHorizontal({product, onRemoveCart, actions = true}: any) {
+export default function CardProductHorizontal({product, onRemoveCart, checkout, actions = true}: any) {
   const {isDarkMode} = useDarkMode()
   const styles = _styles(isDarkMode)
   const [cant, setCant] = useState(1)
@@ -42,7 +42,24 @@ export default function CardProductHorizontal({product, onRemoveCart, actions = 
           ) : (
             <>
               <Typography style={styles.category} translate={false}>Size: {product.size}</Typography>
-              <Typography style={styles.price} translate={false}>{currencyType} {product.price.toFixed(2)}</Typography>
+              <View style={styles.containerCant}>
+                <Typography
+                  style={styles.price}
+                  translate={false}
+                >
+                  {currencyType} {product.price.toFixed(2)}
+                </Typography>
+                {checkout && (
+                  <View style={styles.cant}>
+                    <Typography
+                      style={styles.cantText}
+                      translate={false}
+                    >
+                      1
+                    </Typography>
+                  </View>
+                )}
+              </View>
             </>
           )}
 

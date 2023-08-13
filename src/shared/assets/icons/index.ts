@@ -24,3 +24,6 @@ export {default as unlike} from './unlike.png';
 export {default as trash} from './trash.png';
 export {default as homeLikeDark} from './home-like-dark.png';
 export {default as homeNotificationsDark} from './home-notifications-dark.png';
+export {default as truck} from './truck.png';
+export {default as chevronLeft} from './chevron-left.png';
+export {default as creditCardPlus} from './credit-card-plus.png';

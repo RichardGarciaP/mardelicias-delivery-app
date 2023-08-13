@@ -35,6 +35,14 @@
     "title": "My Cart",
     "remove_cart": "Remove From Cart"
   },
+  "checkout": {
+    "title": "Check Out",
+    "new_address": "Add new address",
+    "confirm_address": "Confirm address",
+    "amount": "Amount",
+    "shipping": "Shipping",
+    "total": "Total"
+  },
   "order": {
     "checkout": {
       "delivery_options": "Delivery Options",
@@ -65,6 +73,12 @@
     "price": "Price",
     "buy_now": "Buy Now",
     "cancel": "Cancel",
-    "yes_remove": "Yes remove"
+    "yes_remove": "Yes remove",
+    "address": "Address",
+    "change": "Change",
+    "chose_shipping": "Chose Shipping",
+    "shipping_type": "Chose Shipping Type",
+    "chose_payment_method": "Chose payment method",
+    "method_type": "Chose Payment Type"
   }
 }

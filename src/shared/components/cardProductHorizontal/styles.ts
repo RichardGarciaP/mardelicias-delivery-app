@@ -48,4 +48,22 @@ export const _styles = (isDarkMode: boolean) => StyleSheet.create({
     justifyContent: 'space-between',
     flex: 1,
   },
+  containerCant: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  cant: {
+    backgroundColor: palette.main.p500,
+    width: normalize(24),
+    height: normalize(24),
+    borderRadius: 150,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  cantText: {
+    color: semantic.text.white,
+    fontSize: normalize(16),
+    fontWeight: '700'
+  }
 })
