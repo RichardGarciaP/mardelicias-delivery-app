@@ -9,7 +9,6 @@ const defaultContainer: ViewStyle = {
   padding: normalize(12),
   borderWidth: 2,
   borderRadius: normalize(16),
-  flex: 1,
   marginVertical: normalize(12)
 }
 export const _styles = (isDarkMode: boolean) => StyleSheet.create({

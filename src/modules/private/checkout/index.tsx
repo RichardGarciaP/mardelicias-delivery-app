@@ -1,16 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import Wrapper from "@/shared/components/wrapper";
 import HeaderWithIcon from "@/shared/components/headerBack";
-import { Option } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
 import { normalize } from "@/shared/helpers";
 import Typography from "@/shared/components/typography";
-import List from "@/shared/components/list";
-import CardProductHorizontal from "@/shared/components/cardProductHorizontal";
-import Icon from "@/shared/components/icon";
-import { MOCKUP_PRODUCTS } from "@/modules/private/home/components/mostPopular";
-import { chevronLeft, creditCardPlus, location, truck } from "@/shared/assets/icons";
+import { creditCardPlus, truck } from "@/shared/assets/icons";
 import { currencyType } from "@/shared/constants/global";
 import {styles} from './styles'
 import AddressSelect from "@/modules/private/checkout/components/addressSelect";
