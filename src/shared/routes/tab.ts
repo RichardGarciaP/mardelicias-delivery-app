@@ -3,9 +3,10 @@ import {
   home as HomeIcon,
   shippingCart,
   user as UserIcon,
-  shoppingBag
-} from "@/shared/assets/icons";
-import Cart from "@/modules/private/cart";
+  shoppingBag,
+} from '@/shared/assets/icons';
+import Cart from '@/modules/private/cart';
+import Profile from '@/modules/private/profile';
 
 export default [
   {
@@ -34,6 +35,6 @@ export default [
     displayName: 'general.profile',
     name: 'profile',
     icon: UserIcon,
-    component: Home,
+    component: Profile,
   },
 ];

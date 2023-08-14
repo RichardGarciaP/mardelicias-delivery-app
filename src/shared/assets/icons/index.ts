@@ -1,4 +1,3 @@
-
 export {default as mail} from './mail.png';
 export {default as user} from './user.png';
 export {default as lock} from './lock.png';
@@ -27,3 +26,5 @@ export {default as homeNotificationsDark} from './home-notifications-dark.png';
 export {default as truck} from './truck.png';
 export {default as chevronLeft} from './chevron-left.png';
 export {default as creditCardPlus} from './credit-card-plus.png';
+export {default as dots} from './dots.png';
+export {default as edit} from './edit.png';
