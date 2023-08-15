@@ -1,56 +1,115 @@
-import {dots, edit, user} from '@/shared/assets/icons';
+import {
+  dots,
+  edit,
+  eyeFilled,
+  help,
+  location,
+  logout,
+  notification,
+  order,
+  security,
+  user,
+  vocher,
+  walletFilled,
+} from '@/shared/assets/icons';
 import Icon from '@/shared/components/icon';
 import Typography from '@/shared/components/typography';
 import Wrapper from '@/shared/components/wrapper';
-import {normalize} from '@/shared/helpers';
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
+import Section from './components/section';
+import Toggle from '@/shared/components/toggle';
+
+import {styles} from './styles';
+import {normalize} from '@/shared/helpers';
 
 const Profile = () => {
+  const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(false);
+
   return (
     <Wrapper>
-      <View
-        style={{
-          flexDirection: 'row',
-          paddingHorizontal: 10,
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Icon icon={user} />
-          <Typography>Profile</Typography>
-        </View>
-        <TouchableOpacity>
-          <Icon icon={dots} />
-        </TouchableOpacity>
-      </View>
-
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-          }}>
-          <Image
-            style={{
-              width: normalize(40),
-              height: normalize(40),
-              marginRight: normalize(12),
-            }}
-            source={{uri: 'https://i.ibb.co/hZqwx78/049-girl-25.png'}}
-          />
-          <View>
-            <Typography>Username</Typography>
-            <Typography>phone</Typography>
+      <View style={styles.container}>
+        <View style={styles.profileText}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Icon icon={user} />
+            <Typography
+              style={{
+                fontWeight: '700',
+                fontSize: 24,
+                marginLeft: normalize(10),
+              }}>
+              Profile
+            </Typography>
           </View>
+          <TouchableOpacity>
+            <Icon icon={dots} />
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Icon icon={edit} />
-        </TouchableOpacity>
+
+        <View style={styles.profileInfo}>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Image
+              style={styles.image}
+              source={{uri: 'https://i.ibb.co/hZqwx78/049-girl-25.png'}}
+            />
+            <View
+              style={{flexDirection: 'column', justifyContent: 'space-evenly'}}>
+              <Typography style={{fontWeight: '700', fontSize: 16}}>
+                Username
+              </Typography>
+              <Typography style={{fontWeight: '500', fontSize: 14}}>
+                phone
+              </Typography>
+            </View>
+          </View>
+          <TouchableOpacity>
+            <Icon icon={edit} />
+          </TouchableOpacity>
+        </View>
+
+        <Section
+          title="General"
+          elements={[
+            {name: 'My Order', leftIcon: <Icon icon={order} />},
+            {name: 'Vocher', leftIcon: <Icon icon={vocher} />},
+          ]}
+        />
+
+        <Section
+          title="Account Setting"
+          elements={[
+            {name: 'Address', leftIcon: <Icon icon={location} />},
+            {name: 'Payment methods', leftIcon: <Icon icon={walletFilled} />},
+            {
+              name: 'Dark Mode',
+              leftIcon: <Icon icon={eyeFilled} />,
+              rightElement: (
+                <Toggle
+                  isEnabled={toggleDarkMode}
+                  setIsEnabled={setToggleDarkMode}
+                />
+              ),
+            },
+            {name: 'Logout', leftIcon: <Icon icon={logout} />},
+          ]}
+        />
+
+        <Section
+          title="App Setting"
+          elements={[
+            {name: 'Language', leftIcon: <Icon icon={order} />},
+            {name: 'Notification', leftIcon: <Icon icon={notification} />},
+            {name: 'Security', leftIcon: <Icon icon={security} />},
+          ]}
+        />
+
+        <Section
+          title="Support"
+          elements={[{name: 'Help Center', leftIcon: <Icon icon={help} />}]}
+        />
       </View>
     </Wrapper>
   );
