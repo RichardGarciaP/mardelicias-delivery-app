@@ -1,4 +1,3 @@
-
 export {default as mail} from './mail.png';
 export {default as user} from './user.png';
 export {default as lock} from './lock.png';
@@ -27,3 +26,14 @@ export {default as homeNotificationsDark} from './home-notifications-dark.png';
 export {default as truck} from './truck.png';
 export {default as chevronLeft} from './chevron-left.png';
 export {default as creditCardPlus} from './credit-card-plus.png';
+export {default as dots} from './dots.png';
+export {default as edit} from './edit.png';
+export {default as order} from './order.png';
+export {default as vocher} from './vocher.png';
+export {default as walletFilled} from './wallet-filled.png';
+export {default as eyeFilled} from './eye-filled.png';
+export {default as logout} from './logout.png';
+export {default as notification} from './notification.png';
+export {default as security} from './security.png';
+export {default as help} from './help.png';
+export {default as phone} from './phone.png';

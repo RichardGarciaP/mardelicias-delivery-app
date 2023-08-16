@@ -1,19 +1,20 @@
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-import { CategoryDTO, OrderDTO, ProductDTO } from "@/shared/DTO";
-import Login from "@/modules/auth/login";
-import CreateAccount from "@/modules/auth/createAccount";
-import EnterOtp from "@/modules/auth/enterOtp";
-import EnterNewPassword from "@/modules/auth/enterNewPassword";
-import ForgotPassword from "@/modules/auth/forgotPassword";
-import Welcome from "@/modules/auth/welcome";
-import DetailPlant from "@/modules/private/detailPlant";
-import PlantList from "@/modules/private/plantList";
-import Favorite from "@/modules/private/home/sections/favorite";
-import Notifications from "@/modules/private/home/sections/notifications";
-import Reviews from "@/modules/private/detailPlant/sections/reviews";
-import Checkout from "@/modules/private/checkout";
+import {CategoryDTO, OrderDTO, ProductDTO} from '@/shared/DTO';
+import Login from '@/modules/auth/login';
+import CreateAccount from '@/modules/auth/createAccount';
+import EnterOtp from '@/modules/auth/enterOtp';
+import EnterNewPassword from '@/modules/auth/enterNewPassword';
+import ForgotPassword from '@/modules/auth/forgotPassword';
+import Welcome from '@/modules/auth/welcome';
+import DetailPlant from '@/modules/private/detailPlant';
+import PlantList from '@/modules/private/plantList';
+import Favorite from '@/modules/private/home/sections/favorite';
+import Notifications from '@/modules/private/home/sections/notifications';
+import Reviews from '@/modules/private/detailPlant/sections/reviews';
+import Checkout from '@/modules/private/checkout';
+import EditProfile from '@/modules/private/profile/sections/EditProfile';
 
 export type RootStackParamList = {
   login: undefined;
@@ -27,7 +28,8 @@ export type RootStackParamList = {
   favorites: undefined;
   notifications: undefined;
   reviews: undefined;
-  checkout: undefined
+  checkout: undefined;
+  editProfile: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -100,6 +102,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'checkout',
     component: Checkout,
+    private: true,
+  },
+  {
+    path: 'editProfile',
+    component: EditProfile,
     private: true,
   },
 ];
