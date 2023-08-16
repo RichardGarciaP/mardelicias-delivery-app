@@ -36,3 +36,4 @@ export {default as logout} from './logout.png';
 export {default as notification} from './notification.png';
 export {default as security} from './security.png';
 export {default as help} from './help.png';
+export {default as phone} from './phone.png';

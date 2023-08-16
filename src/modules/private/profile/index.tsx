@@ -22,9 +22,12 @@ import Toggle from '@/shared/components/toggle';
 
 import {styles} from './styles';
 import {normalize} from '@/shared/helpers';
+import {NavigationProps} from '@/shared/routes/stack';
+import {useNavigation} from '@react-navigation/native';
 
 const Profile = () => {
   const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(false);
+  const {navigate} = useNavigation<NavigationProps>();
 
   return (
     <Wrapper>
@@ -65,7 +68,7 @@ const Profile = () => {
               </Typography>
             </View>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate('editProfile')}>
             <Icon icon={edit} />
           </TouchableOpacity>
         </View>
