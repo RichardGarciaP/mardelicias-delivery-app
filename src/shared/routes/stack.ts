@@ -15,6 +15,7 @@ import Notifications from '@/modules/private/home/sections/notifications';
 import Reviews from '@/modules/private/detailPlant/sections/reviews';
 import Checkout from '@/modules/private/checkout';
 import EditProfile from '@/modules/private/profile/sections/EditProfile';
+import Vouchers from '@/modules/private/profile/sections/Vouchers';
 
 export type RootStackParamList = {
   login: undefined;
@@ -30,6 +31,7 @@ export type RootStackParamList = {
   reviews: undefined;
   checkout: undefined;
   editProfile: undefined;
+  vouchers: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -107,6 +109,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'editProfile',
     component: EditProfile,
+    private: true,
+  },
+  {
+    path: 'vouchers',
+    component: Vouchers,
     private: true,
   },
 ];

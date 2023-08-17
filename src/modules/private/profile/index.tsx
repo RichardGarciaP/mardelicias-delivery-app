@@ -77,7 +77,11 @@ const Profile = () => {
           title="General"
           elements={[
             {name: 'My Order', leftIcon: <Icon icon={order} />},
-            {name: 'Vocher', leftIcon: <Icon icon={vocher} />},
+            {
+              name: 'Vocher',
+              leftIcon: <Icon icon={vocher} />,
+              onPress: () => navigate('vouchers'),
+            },
           ]}
         />
 

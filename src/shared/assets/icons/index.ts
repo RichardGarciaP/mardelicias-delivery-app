@@ -37,3 +37,6 @@ export {default as notification} from './notification.png';
 export {default as security} from './security.png';
 export {default as help} from './help.png';
 export {default as phone} from './phone.png';
+export {default as plant} from './plantIcon.png';
+export {default as dolar} from './dolar.png';
+export {default as calendar} from './calendar.png';
