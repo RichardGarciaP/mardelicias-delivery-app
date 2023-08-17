@@ -40,3 +40,5 @@ export {default as phone} from './phone.png';
 export {default as plant} from './plantIcon.png';
 export {default as dolar} from './dolar.png';
 export {default as calendar} from './calendar.png';
+export {default as applePay} from './apple_pay.png';
+export {default as paypal} from './paypal.png';
