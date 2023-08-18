@@ -11,6 +11,7 @@ import {styles} from './styles'
 import AddressSelect from "@/modules/private/checkout/components/addressSelect";
 import ProductList from "@/shared/components/productList";
 import Select from "@/modules/private/checkout/components/select";
+import ShippingSelect from "@/modules/private/checkout/components/shippingSelect";
 
 export default function Checkout() {
 
@@ -23,11 +24,7 @@ export default function Checkout() {
           <View style={styles.body}>
             <AddressSelect />
             <ProductList />
-            <Select
-              title={"general.chose_payment_method"}
-              description={"general.method_type"}
-              icon={truck}
-            />
+            <ShippingSelect />
             <Select
               title={"general.chose_shipping"}
               description={"general.shipping_type"}

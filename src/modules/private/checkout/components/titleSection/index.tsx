@@ -5,13 +5,16 @@ import { styles } from "./styles";
 
 interface TitleSectionProps {
   title: string;
-  callback: any
+  callback?: any;
+  showChange?: boolean;
 }
-export default function TitleSection({title, callback}: TitleSectionProps) {
+export default function TitleSection({title, callback, showChange = true}: TitleSectionProps) {
   return (
     <View style={styles.containerSection}>
       <Typography style={styles.titleSection}>{title}</Typography>
-      <Typography onPress={callback}>{"general.change"}</Typography>
+      {showChange && (
+        <Typography onPress={callback}>{"general.change"}</Typography>
+      )}
     </View>
   )
 }

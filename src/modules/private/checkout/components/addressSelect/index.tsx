@@ -30,7 +30,7 @@ export default function AddressSelect() {
         <View style={{padding: normalize(24)}}>
           <TouchableOpacity onPress={toggleModal} style={{flexDirection: 'row', alignItems: 'center'}}>
             <Icon icon={arrowBack} />
-            <Typography>{"general.address"}</Typography>
+            <Typography style={{fontWeight: '700', fontSize: normalize(24), marginLeft: normalize(10)}}>{"general.address"}</Typography>
           </TouchableOpacity>
 
           <ListOptionCard options={

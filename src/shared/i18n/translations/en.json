@@ -41,7 +41,8 @@
     "confirm_address": "Confirm address",
     "amount": "Amount",
     "shipping": "Shipping",
-    "total": "Total"
+    "total": "Total",
+    "select_shipping": "Select shipping"
   },
   "order": {
     "checkout": {

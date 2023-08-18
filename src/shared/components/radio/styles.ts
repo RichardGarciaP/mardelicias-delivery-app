@@ -1,9 +1,9 @@
 import { StyleSheet, ViewStyle } from "react-native";
-import { semantic } from "@/shared/constants/colors";
+import { palette, semantic } from "@/shared/constants/colors";
 import { normalize } from "@/shared/helpers";
 
 const defaultContainer: ViewStyle = {
-  borderWidth: 1,
+  borderWidth: 1.5,
   width: normalize(25),
   height: normalize(25),
   borderRadius: 150,
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   containerRadioButtonActive: {
     ...defaultContainer,
-    borderColor: semantic.background.dark.d500
+    borderColor: palette.main.p500
   },
   innerRadioButton: {
     ...defaultRadioButton,
@@ -32,6 +32,7 @@ export const styles = StyleSheet.create({
   },
   innerRadioButtonActive: {
     ...defaultRadioButton,
-    height: normalize(15)
+    height: normalize(15),
+    backgroundColor: palette.main.p500,
   }
 })

@@ -41,7 +41,8 @@
     "confirm_address": "Confirmar dirección",
     "amount": "Cantidad",
     "shipping": "Envio",
-    "total": "Total"
+    "total": "Total",
+    "select_shipping": "Seleccionar envio"
   },
   "order": {
     "checkout": {
