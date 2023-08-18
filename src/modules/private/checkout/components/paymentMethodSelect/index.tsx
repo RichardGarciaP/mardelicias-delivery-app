@@ -6,18 +6,23 @@ import { TouchableOpacity, View } from "react-native";
 import { normalize } from "@/shared/helpers";
 import Icon from "@/shared/components/icon";
 import Typography from "@/shared/components/typography";
-import ListOptionCard from "@/shared/components/ListOptionCard";
+import ListOptionCard, { OptionCardOptions } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
 
 export default function PaymentMethodSelect() {
   const [openModal, setOpenModal] = useState(false)
+  const [paymentSelected, setPaymentSelected] = useState<OptionCardOptions>();
 
+  function onSelectPayment(option: OptionCardOptions) {
+    setPaymentSelected(option)
+  }
   function toggleModal() {
     setOpenModal(!openModal)
   }
   return (
     <View>
       <Select
+        value={paymentSelected}
         callback={toggleModal}
         showChange={false}
         title={"general.chose_payment_method"}
@@ -32,44 +37,48 @@ export default function PaymentMethodSelect() {
             <Typography style={{fontWeight: '700', fontSize: normalize(24), marginLeft: normalize(10)}}>{"checkout.select_shipping"}</Typography>
           </TouchableOpacity>
 
-          <ListOptionCard options={
-            [
-              {
-                id: '1',
-                icon: truck,
-                title: 'Economy',
-                description: 'Estimated Arrival, Mei  30-31',
-                active: true,
-                price: '10',
-              },
-              {
-                id: '2',
-                icon: truck,
-                title: 'Express',
-                description: 'Estimated Arrival, Mei  30-31',
-                active: false,
-                price: '30',
-              },
-              {
-                id: '3',
-                icon: truck,
-                title: 'Reguler',
-                description: 'Estimated Arrival, Mei  30-31',
-                active: false,
-                price: '15',
-              },
-              {
-                id: '4',
-                icon: truck,
-                title: 'Cargo',
-                description: 'Estimated Arrival, Mei  30-31',
-                active: false,
-                price: '20',
-              },
-            ]
-          } />
+          <ListOptionCard
+            value={paymentSelected}
+            onChange={onSelectPayment}
+            options={
+              [
+                {
+                  id: '1',
+                  icon: truck,
+                  title: 'Economy',
+                  description: 'Estimated Arrival, Mei  30-31',
+                  active: true,
+                  price: '10',
+                },
+                {
+                  id: '2',
+                  icon: truck,
+                  title: 'Express',
+                  description: 'Estimated Arrival, Mei  30-31',
+                  active: false,
+                  price: '30',
+                },
+                {
+                  id: '3',
+                  icon: truck,
+                  title: 'Reguler',
+                  description: 'Estimated Arrival, Mei  30-31',
+                  active: false,
+                  price: '15',
+                },
+                {
+                  id: '4',
+                  icon: truck,
+                  title: 'Cargo',
+                  description: 'Estimated Arrival, Mei  30-31',
+                  active: false,
+                  price: '20',
+                },
+              ]
+            }
+          />
 
-          <Button title="general.continue" />
+          <Button onPress={toggleModal} title="general.continue" />
         </View>
       </ButtonSheet>
     </View>
