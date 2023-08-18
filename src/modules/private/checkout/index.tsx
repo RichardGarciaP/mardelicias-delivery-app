@@ -10,8 +10,8 @@ import { currencyType } from "@/shared/constants/global";
 import {styles} from './styles'
 import AddressSelect from "@/modules/private/checkout/components/addressSelect";
 import ProductList from "@/shared/components/productList";
-import Select from "@/modules/private/checkout/components/select";
 import ShippingSelect from "@/modules/private/checkout/components/shippingSelect";
+import PaymentMethodSelect from "@/modules/private/checkout/components/paymentMethodSelect";
 
 export default function Checkout() {
 
@@ -25,11 +25,7 @@ export default function Checkout() {
             <AddressSelect />
             <ProductList />
             <ShippingSelect />
-            <Select
-              title={"general.chose_shipping"}
-              description={"general.shipping_type"}
-              icon={creditCardPlus}
-            />
+            <PaymentMethodSelect />
 
             <View style={styles.resume}>
               <View style={styles.containerResumeText}>
@@ -46,27 +42,6 @@ export default function Checkout() {
               </View>
             </View>
           </View>
-          {/*<ListOptionCard options={
-            [
-              {
-                id: '1',
-                icon: location,
-                title: 'Home',
-                description: 'Snow Street, San Francisco, California 42343',
-                active: true
-              },
-              {
-                id: '2',
-                icon: location,
-                title: 'Parent House',
-                description: 'Snow Street, San Francisco, California 423433123',
-                active: false
-              },
-            ]
-          } />
-
-          <ButtonOutline title="checkout.new_address" />
-          */}
         </View>
       </Wrapper>
       <Button title="checkout.confirm_address" />

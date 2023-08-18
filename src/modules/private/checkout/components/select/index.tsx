@@ -7,7 +7,7 @@ import TitleSection from "@/modules/private/checkout/components/titleSection";
 import { arrowBack, chevronLeft, truck } from "@/shared/assets/icons";
 import { styles } from "./styles";
 import { normalize } from "@/shared/helpers";
-import ListOptionCard from "@/shared/components/ListOptionCard";
+import ListOptionCard, { Option, OptionCardOptions } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
 import ButtonSheet from "@/shared/components/buttonSheet";
 
@@ -17,23 +17,34 @@ interface SelectCheckoutProps {
   description: string;
   showChange?: boolean
   callback: any;
+  value: OptionCardOptions | undefined
 }
-export default function Select({title, icon, description, showChange, callback}: SelectCheckoutProps) {
+export default function Select({title, icon, description, showChange, callback, value}: SelectCheckoutProps) {
 
   return (
     <View style={styles.selects}>
 
-      <TitleSection showChange={showChange} title={title} />
+      <TitleSection callback={callback} showChange={showChange} title={title} />
 
-      <TouchableOpacity onPress={callback} style={styles.containerSelect}>
-        <View style={styles.row}>
-          <Icon icon={icon} />
-          <Typography style={styles.textShippingType}>{description}</Typography>
-        </View>
-        <View>
-          <Icon icon={chevronLeft} />
-        </View>
-      </TouchableOpacity>
+      {value ? (
+        <Option option={{
+          id: value.id,
+          icon: value.icon,
+          title: value.title,
+          description: value.description,
+          active: true
+        }} />
+      ) : (
+        <TouchableOpacity onPress={callback} style={styles.containerSelect}>
+          <View style={styles.row}>
+            <Icon icon={icon} />
+            <Typography style={styles.textShippingType}>{description}</Typography>
+          </View>
+          <View>
+            <Icon icon={chevronLeft} />
+          </View>
+        </TouchableOpacity>
+      )}
     </View>
   )
 }

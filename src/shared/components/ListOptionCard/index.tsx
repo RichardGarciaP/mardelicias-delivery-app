@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import Typography from "@/shared/components/typography";
 import { _styles } from "./styles";
@@ -7,7 +7,7 @@ import Icon from "@/shared/components/icon";
 import Radio from "@/shared/components/radio";
 import { activeOpacity, currencyType } from "@/shared/constants/global";
 
-interface OptionCardOptions {
+export interface OptionCardOptions {
   id: string;
   icon: any;
   title: string;
@@ -16,10 +16,11 @@ interface OptionCardOptions {
   price?: string
 }
 interface ListOptionCardProps {
+  value: OptionCardOptions | undefined;
   options: OptionCardOptions[];
   onChange?: (value: OptionCardOptions) => void
 }
-export default function ListOptionCard({options, onChange}: ListOptionCardProps) {
+export default function ListOptionCard({options, onChange, value}: ListOptionCardProps) {
   const [currentOptions, setCurrentOptions] = useState(options);
   function handleChange(optionSelected: OptionCardOptions) {
     if (onChange) {
@@ -30,6 +31,15 @@ export default function ListOptionCard({options, onChange}: ListOptionCardProps)
       active: option.id === optionSelected.id
     })));
   }
+  useEffect(() => {
+    if (value?.id) {
+      setCurrentOptions(currentOptions.map(option => ({
+        ...option,
+        active: option.id === value.id
+      })))
+    }
+  }, [value?.id])
+
   return (
     <View>
       {currentOptions.map(option => {
