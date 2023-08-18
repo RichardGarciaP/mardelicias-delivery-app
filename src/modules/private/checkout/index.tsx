@@ -44,7 +44,7 @@ export default function Checkout() {
           </View>
         </View>
       </Wrapper>
-      <Button title="checkout.confirm_address" />
+      <Button title="general.continue" />
       <View style={{height: normalize(40)}} />
     </View>
   )
