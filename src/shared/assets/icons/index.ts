@@ -40,3 +40,4 @@ export {default as phone} from './phone.png';
 export {default as plant} from './plantIcon.png';
 export {default as dolar} from './dolar.png';
 export {default as calendar} from './calendar.png';
+export {default as calendarDate} from './calendar-date.png';

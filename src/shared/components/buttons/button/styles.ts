@@ -2,15 +2,15 @@ import {StyleSheet} from 'react-native';
 import {palette, semantic} from '@/shared/constants/colors';
 import {normalize} from '@/shared/helpers';
 
-export const _styles = (disabled: boolean | undefined) =>
+export const _styles = (disabled: boolean | undefined, sm: boolean | undefined) =>
   StyleSheet.create({
     container: {
       backgroundColor: disabled
         ? semantic.fill.f04
         : palette.main.p500,
-      paddingHorizontal: normalize(10),
-      paddingVertical: normalize(16),
-      borderRadius: normalize(16),
+      paddingHorizontal: normalize(sm ? 6 : 10),
+      paddingVertical: normalize(sm ? 8 : 16),
+      borderRadius: normalize(sm ? 10 : 16),
       flexDirection: 'row',
       alignItems: 'center',
     },
