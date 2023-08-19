@@ -44,14 +44,11 @@
     "total": "Total",
     "select_shipping": "Select shipping"
   },
-  "order": {
-    "checkout": {
-      "delivery_options": "Delivery Options",
-      "order_summary": "Order Summary",
-      "others_bought": "Others also bought",
-      "payment_summary": "Payment Summary",
-      "payment_method": "Payment Method"
-    }
+  "orders": {
+    "title": "My Orders",
+    "progress": "On Progress",
+    "success": "Success",
+    "canceled": "Canceled"
   },
   "general": {
     "typing_name": "Typing your name",
