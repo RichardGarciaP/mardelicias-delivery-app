@@ -34,11 +34,11 @@ export default function Tracking() {
           <View style={styles.containerInfoDelivery}>
             <View style={{flex: 1}}>
               <Typography style={styles.titleSection}>{"tracking.estimate_delivery"}</Typography>
-              <Typography style={styles.valueSection}>20 feb, 2023</Typography>
+              <Typography style={styles.valueSection} translate={false}>20 feb, 2023</Typography>
             </View>
             <View style={{flex: 1}}>
               <Typography style={styles.titleSection}>{"tracking.shipment"}</Typography>
-              <Typography style={styles.valueSection}>Kencana Express</Typography>
+              <Typography style={styles.valueSection} translate={false}>Kencana Express</Typography>
             </View>
           </View>
         </View>
@@ -72,6 +72,44 @@ export default function Tracking() {
 
         <View>
           <Typography style={styles.titleHistory}>{"tracking.packet_delivery"}</Typography>
+
+          <View>
+            <View style={styles.containerStepHistory}>
+              <View>
+                <Typography style={styles.titleHistoryStep} translate={false}>Order In Transit, March 12</Typography>
+                <Typography translate={false}>Plum Street, San Francisco, California 93244</Typography>
+              </View>
+              <Typography translate={false}>13:20</Typography>
+            </View>
+            <View style={styles.containerStepHistory}>
+              <View>
+                <Typography style={styles.titleHistoryStep} translate={false}>Order In Transit, March 12</Typography>
+                <Typography translate={false}>Plum Street, San Francisco, California 93244</Typography>
+              </View>
+              <Typography translate={false}>13:20</Typography>
+            </View>
+            <View style={styles.containerStepHistory}>
+              <View>
+                <Typography style={styles.titleHistoryStep} translate={false}>Order In Transit, March 12</Typography>
+                <Typography translate={false}>Plum Street, San Francisco, California 93244</Typography>
+              </View>
+              <Typography translate={false}>13:20</Typography>
+            </View>
+            <View style={styles.containerStepHistory}>
+              <View>
+                <Typography style={styles.titleHistoryStep} translate={false}>Order In Transit, March 12</Typography>
+                <Typography translate={false}>Plum Street, San Francisco, California 93244</Typography>
+              </View>
+              <Typography translate={false}>13:20</Typography>
+            </View>
+            <View style={styles.containerStepHistory}>
+              <View>
+                <Typography style={styles.titleHistoryStep} translate={false}>Order In Transit, March 12</Typography>
+                <Typography translate={false}>Plum Street, San Francisco, California 93244</Typography>
+              </View>
+              <Typography translate={false}>13:20</Typography>
+            </View>
+          </View>
         </View>
 
       </View>

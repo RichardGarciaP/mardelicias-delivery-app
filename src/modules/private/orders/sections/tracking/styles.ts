@@ -104,5 +104,15 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: normalize(16),
     fontWeight: '700'
+  },
+  containerStepHistory: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: normalize(18)
+  },
+  titleHistoryStep: {
+    fontWeight: '700',
+    marginBottom: normalize(8)
   }
 })
