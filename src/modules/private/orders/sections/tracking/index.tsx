@@ -1,12 +1,12 @@
 import React from 'react';
-import Wrapper from "@/shared/components/wrapper";
 import { View } from "react-native";
+import Wrapper from "@/shared/components/wrapper";
 import HeaderWithIcon from "@/shared/components/headerBack";
 import Icon from "@/shared/components/icon";
-import { check, chevronLeft, packageIcon, truck, truckInTracking } from "@/shared/assets/icons";
 import Typography from "@/shared/components/typography";
-import {styles} from './styles'
 import { normalize } from "@/shared/helpers";
+import {styles} from './styles'
+import { check, chevronLeft, packageIcon, truck, truckInTracking } from "@/shared/assets/icons";
 
 export default function Tracking() {
 

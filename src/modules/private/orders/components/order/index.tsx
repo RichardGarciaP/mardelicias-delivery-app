@@ -4,7 +4,7 @@ import Typography from "@/shared/components/typography";
 import Icon from "@/shared/components/icon";
 import { calendarDate, trash } from "@/shared/assets/icons";
 import {_styles} from './styles'
-import { currencyType } from "@/shared/constants/global";
+import { activeOpacity, currencyType } from "@/shared/constants/global";
 import useDarkMode from "@/shared/hooks/useDarkMode";
 import { ProductDTO } from "@/shared/DTO";
 import { Button } from "@/shared/components/buttons";
@@ -12,20 +12,23 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationProps } from "@/shared/routes/stack";
 
 interface OrderProps {
-  product: ProductDTO
+  product: ProductDTO;
+  track?: boolean | undefined
 }
-export default function Order({product}: OrderProps) {
+export default function Order({product, track=true}: OrderProps) {
   const {navigate} = useNavigation<NavigationProps>()
   const {isDarkMode} = useDarkMode()
   const styles = _styles(isDarkMode)
   return (
     <View>
-      <View style={styles.containerDate}>
-        <Icon icon={calendarDate} />
-        <Typography style={styles.date} translate={false}>Mie 26, 2023</Typography>
-      </View>
+      {track && (
+        <View style={styles.containerDate}>
+          <Icon icon={calendarDate} />
+          <Typography style={styles.date} translate={false}>Mie 26, 2023</Typography>
+        </View>
+      )}
 
-      <TouchableOpacity style={styles.containerOrder}>
+      <TouchableOpacity onPress={() => navigate('eReceipt')} activeOpacity={activeOpacity} style={styles.containerOrder}>
         <View style={styles.containerImage}>
           <Image style={styles.image} resizeMode="contain" source={{uri: product.image}} />
         </View>
@@ -43,9 +46,11 @@ export default function Order({product}: OrderProps) {
               {currencyType} {product.price.toFixed(2)}
             </Typography>
             <View style={{width: 20}} />
-            <View style={{flex: 1}}>
-              <Button onPress={() => navigate('tracking')} sm title="orders.track_order" />
-            </View>
+            {track && (
+              <View style={{flex: 1}}>
+                <Button onPress={() => navigate('tracking')} sm title="orders.track_order" />
+              </View>
+            )}
           </View>
         </View>
       </TouchableOpacity>

@@ -12,6 +12,7 @@ import AddressSelect from "@/modules/private/checkout/components/addressSelect";
 import ProductList from "@/shared/components/productList";
 import ShippingSelect from "@/modules/private/checkout/components/shippingSelect";
 import PaymentMethodSelect from "@/modules/private/checkout/components/paymentMethodSelect";
+import ResumeTransaction from "@/shared/components/resumeTransaction";
 
 export default function Checkout() {
 
@@ -27,20 +28,7 @@ export default function Checkout() {
             <ShippingSelect />
             <PaymentMethodSelect />
 
-            <View style={styles.resume}>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.amount"}</Typography>
-                <Typography translate={false}>{currencyType} 83.00</Typography>
-              </View>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.shipping"}</Typography>
-                <Typography translate={false}>-</Typography>
-              </View>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.total"}</Typography>
-                <Typography translate={false}>-</Typography>
-              </View>
-            </View>
+            <ResumeTransaction />
           </View>
         </View>
       </Wrapper>
