@@ -16,8 +16,9 @@ import Reviews from '@/modules/private/detailPlant/sections/reviews';
 import Checkout from '@/modules/private/checkout';
 import EditProfile from '@/modules/private/profile/sections/EditProfile';
 import Vouchers from '@/modules/private/profile/sections/Vouchers';
-import Tracking from "@/modules/private/orders/sections/tracking";
-import EReceipt from "@/modules/private/orders/sections/eReceipt";
+import Tracking from '@/modules/private/orders/sections/tracking';
+import EReceipt from '@/modules/private/orders/sections/eReceipt';
+import NewAddress from '@/modules/private/profile/sections/NewAddress';
 
 export type RootStackParamList = {
   login: undefined;
@@ -36,6 +37,7 @@ export type RootStackParamList = {
   vouchers: undefined;
   tracking: undefined;
   eReceipt: undefined;
+  addNewAddress: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -128,6 +130,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'eReceipt',
     component: EReceipt,
+    private: true,
+  },
+  {
+    path: 'addNewAddress',
+    component: NewAddress,
     private: true,
   },
 ];
