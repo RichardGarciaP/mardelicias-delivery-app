@@ -45,3 +45,5 @@ export {default as packageIcon} from './package.png';
 export {default as truckInTracking} from './truck--track.png';
 export {default as check} from './check.png';
 export {default as paypal} from './PayPal.png';
+export {default as applePay} from './apple_pay.png';
+export {default as map} from './maps.png';

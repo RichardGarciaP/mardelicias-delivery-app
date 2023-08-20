@@ -19,6 +19,7 @@ import Vouchers from '@/modules/private/profile/sections/Vouchers';
 import Tracking from '@/modules/private/orders/sections/tracking';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
 import NewAddress from '@/modules/private/profile/sections/NewAddress';
+import Payments from '@/modules/private/profile/sections/Payments';
 
 export type RootStackParamList = {
   login: undefined;
@@ -38,6 +39,7 @@ export type RootStackParamList = {
   tracking: undefined;
   eReceipt: undefined;
   addNewAddress: undefined;
+  payments: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -135,6 +137,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'addNewAddress',
     component: NewAddress,
+    private: true,
+  },
+  {
+    path: 'payments',
+    component: Payments,
     private: true,
   },
 ];

@@ -2,7 +2,7 @@ import {View, TouchableOpacity, ColorValue} from 'react-native';
 import React from 'react';
 import Typography from '@/shared/components/typography';
 import {_styles} from './styles';
-import {palette, semantic} from '@/shared/constants/colors';
+import {palette} from '@/shared/constants/colors';
 import Icon from '@/shared/components/icon';
 import {calendar, dolar, plant} from '@/shared/assets/icons';
 
