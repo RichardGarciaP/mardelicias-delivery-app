@@ -48,7 +48,14 @@
     "title": "My Orders",
     "progress": "On Progress",
     "success": "Success",
-    "canceled": "Canceled"
+    "canceled": "Canceled",
+    "track_order": "Track Order"
+  },
+  "tracking": {
+    "title": "Tracking",
+    "estimate_delivery": "Estimate Delivery",
+    "shipment": "Shipment",
+    "packet_delivery": "Packet In Delivery"
   },
   "general": {
     "typing_name": "Typing your name",

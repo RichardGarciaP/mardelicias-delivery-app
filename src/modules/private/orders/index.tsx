@@ -12,7 +12,7 @@ export default function Orders() {
   return (
     <Wrapper>
       <View style={styles.container}>
-        <HeaderWithIcon icon={shoppingBag} title="My Orders" />
+        <HeaderWithIcon icon={shoppingBag} title={"orders.title"} />
         <TopNavigation />
         <Order product={{
           id: '1',

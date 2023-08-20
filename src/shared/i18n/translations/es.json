@@ -48,7 +48,14 @@
     "title": "Ordenes",
     "progress": "En proceso",
     "success": "Completados",
-    "canceled": "Cancelados"
+    "canceled": "Cancelados",
+    "track_order": "Seguimiento"
+  },
+  "tracking": {
+    "title": "Seguimiento",
+    "estimate_delivery": "Entrega estimada",
+    "shipment": "Envió",
+    "packet_delivery": "Paquete en entrega"
   },
   "general": {
     "typing_name": "Escribe tu nombre",

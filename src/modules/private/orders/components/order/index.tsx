@@ -8,11 +8,14 @@ import { currencyType } from "@/shared/constants/global";
 import useDarkMode from "@/shared/hooks/useDarkMode";
 import { ProductDTO } from "@/shared/DTO";
 import { Button } from "@/shared/components/buttons";
+import { useNavigation } from "@react-navigation/native";
+import { NavigationProps } from "@/shared/routes/stack";
 
 interface OrderProps {
   product: ProductDTO
 }
 export default function Order({product}: OrderProps) {
+  const {navigate} = useNavigation<NavigationProps>()
   const {isDarkMode} = useDarkMode()
   const styles = _styles(isDarkMode)
   return (
@@ -41,7 +44,7 @@ export default function Order({product}: OrderProps) {
             </Typography>
             <View style={{width: 20}} />
             <View style={{flex: 1}}>
-              <Button sm title="Track Order" />
+              <Button onPress={() => navigate('tracking')} sm title="orders.track_order" />
             </View>
           </View>
         </View>

@@ -41,3 +41,6 @@ export {default as plant} from './plantIcon.png';
 export {default as dolar} from './dolar.png';
 export {default as calendar} from './calendar.png';
 export {default as calendarDate} from './calendar-date.png';
+export {default as packageIcon} from './package.png';
+export {default as truckInTracking} from './truck--track.png';
+export {default as check} from './check.png';
