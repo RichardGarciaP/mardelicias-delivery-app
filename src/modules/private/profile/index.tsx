@@ -89,7 +89,11 @@ const Profile = () => {
           title="Account Setting"
           elements={[
             {name: 'Address', leftIcon: <Icon icon={location} />},
-            {name: 'Payment methods', leftIcon: <Icon icon={walletFilled} />},
+            {
+              name: 'Payment methods',
+              leftIcon: <Icon icon={walletFilled} />,
+              onPress: () => navigate('payments'),
+            },
             {
               name: 'Dark Mode',
               leftIcon: <Icon icon={eyeFilled} />,
