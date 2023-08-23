@@ -2,7 +2,7 @@ import {semantic} from '@/shared/constants/colors';
 import {normalize} from '@/shared/helpers';
 import {StyleSheet} from 'react-native';
 
-export const _styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     height: normalize(200),
     width: '100%',

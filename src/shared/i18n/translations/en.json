@@ -80,5 +80,9 @@
     "shipping_type": "Chose Shipping Type",
     "chose_payment_method": "Chose payment method",
     "method_type": "Chose Payment Type"
+  },
+  "payments": {
+    "title": "Payments",
+    "button": "Add New Payment"
   }
 }

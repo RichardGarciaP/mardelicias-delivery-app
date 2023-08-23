@@ -7,7 +7,7 @@ import Icon from '@/shared/components/icon';
 import {applePay, filter, paypal, search} from '@/shared/assets/icons';
 import PaymentBox from './components/PaymentBox';
 import {ButtonOutline} from '@/shared/components/buttons';
-import {_styles} from './styles';
+import {styles} from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
 
 const PAYMENTS_EXAMPLE = [
@@ -24,9 +24,9 @@ const PAYMENTS_EXAMPLE = [
 const Payments = () => {
   return (
     <Wrapper>
-      <View style={_styles.container}>
-        <HeaderWithIcon title="Payments" />
-        <View style={_styles.searchContainer}>
+      <View style={styles.container}>
+        <HeaderWithIcon title="payments.title" />
+        <View style={styles.searchContainer}>
           <Input
             leftIcon={<Icon icon={search} />}
             rightIcon={<Icon icon={filter} />}
@@ -42,7 +42,7 @@ const Payments = () => {
           </ScrollView>
         </View>
 
-        <ButtonOutline title="Add New Payment" />
+        <ButtonOutline title="payments.button" />
       </View>
     </Wrapper>
   );
