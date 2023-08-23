@@ -9,58 +9,21 @@ import {semantic} from '@/shared/constants/colors';
 import {normalize} from '@/shared/helpers';
 import Icon from '@/shared/components/icon';
 import {mastercard} from '@/shared/assets/icons';
+import {styles} from './styles';
 
 const NewPayment = () => {
   return (
     <Wrapper>
-      <View
-        style={{
-          paddingHorizontal: normalize(24),
-        }}>
+      <View style={styles.container}>
         <HeaderWithIcon title="newPayment.title" />
 
-        <View
-          style={{
-            backgroundColor: semantic.fill.f01,
-            height: normalize(222),
-            borderRadius: normalize(20),
-            paddingHorizontal: normalize(12),
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            marginTop: normalize(32),
-            marginBottom: normalize(8),
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              width: '100%',
-            }}>
-            <Typography
-              style={{
-                fontWeight: '700',
-                color: semantic.text.white,
-                fontSize: normalize(16),
-              }}>
-              MoCard
-            </Typography>
-            <Typography
-              style={{
-                fontWeight: '700',
-                color: semantic.text.white,
-                fontSize: normalize(16),
-              }}>
-              Visa
-            </Typography>
+        <View style={styles.card}>
+          <View style={styles.rowBetween}>
+            <Typography style={styles.textBold}>MoCard</Typography>
+            <Typography style={styles.textBold}>Visa</Typography>
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: normalize(8),
-              alignItems: 'flex-start',
-              width: '100%',
-            }}>
+          <View style={styles.dotsContainer}>
             {new Array(9).fill(0).map((_, index) => (
               <View
                 key={index}
@@ -74,29 +37,18 @@ const NewPayment = () => {
             ))}
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              width: '100%',
-            }}>
+          <View style={styles.rowBetween}>
             <View>
-              <Typography
-                style={{
-                  fontWeight: '400',
-                  color: semantic.text.white,
-                  fontSize: normalize(12),
-                }}>
+              <Typography style={styles.textLight}>
                 newPayment.cardHolderName
               </Typography>
               <View
-                style={{
-                  flexDirection: 'row',
-                  gap: normalize(8),
-                  alignItems: 'flex-start',
-                  width: '100%',
-                  marginTop: normalize(12),
-                }}>
+                style={[
+                  styles.dotsContainer,
+                  {
+                    marginTop: normalize(12),
+                  },
+                ]}>
                 {new Array(10).fill(0).map((_, index) => (
                   <View
                     key={index}
@@ -111,22 +63,16 @@ const NewPayment = () => {
               </View>
             </View>
             <View>
-              <Typography
-                style={{
-                  fontWeight: '400',
-                  color: semantic.text.white,
-                  fontSize: normalize(12),
-                }}>
+              <Typography style={styles.textLight}>
                 newPayment.expiryDate
               </Typography>
               <View
-                style={{
-                  flexDirection: 'row',
-                  gap: normalize(8),
-                  alignItems: 'flex-start',
-                  width: '100%',
-                  marginTop: normalize(12),
-                }}>
+                style={[
+                  styles.dotsContainer,
+                  {
+                    marginTop: normalize(12),
+                  },
+                ]}>
                 {new Array(10).fill(0).map((_, index) => (
                   <View
                     key={index}
