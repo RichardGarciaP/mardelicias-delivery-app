@@ -9,6 +9,8 @@ import PaymentBox from './components/PaymentBox';
 import {ButtonOutline} from '@/shared/components/buttons';
 import {_styles} from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
+import {NavigationProps} from '@/shared/routes/stack';
+import {useNavigation} from '@react-navigation/native';
 
 const PAYMENTS_EXAMPLE = [
   {
@@ -22,6 +24,8 @@ const PAYMENTS_EXAMPLE = [
 ];
 
 const Payments = () => {
+  const {navigate} = useNavigation<NavigationProps>();
+
   return (
     <Wrapper>
       <View style={_styles.container}>
@@ -42,7 +46,10 @@ const Payments = () => {
           </ScrollView>
         </View>
 
-        <ButtonOutline title="Add New Payment" />
+        <ButtonOutline
+          title="Add New Payment"
+          onPress={() => navigate('newPayment')}
+        />
       </View>
     </Wrapper>
   );
