@@ -58,7 +58,7 @@ const CouponBox = ({
         <View style={styles.divider} />
         <View style={[styles.vocherInfo, {justifyContent: 'space-between'}]}>
           <Typography style={{color: '#FFF', fontWeight: '500', fontSize: 12}}>
-            Your coupon code:
+            vouchers.couponBox.couponCode
           </Typography>
           <Typography style={{color: '#FFF', fontWeight: '700', fontSize: 16}}>
             {code}
@@ -74,7 +74,9 @@ const CouponBox = ({
             style={{
               marginLeft: 10,
             }}>
-            <Typography style={styles.lightText}>Valid Until</Typography>
+            <Typography style={styles.lightText}>
+              vouchers.couponBox.date
+            </Typography>
             <Typography style={styles.boldText}>{validDate}</Typography>
           </View>
         </View>
@@ -84,7 +86,9 @@ const CouponBox = ({
             style={{
               marginLeft: 10,
             }}>
-            <Typography style={styles.lightText}>Min Transaction</Typography>
+            <Typography style={styles.lightText}>
+              vouchers.couponBox.transaction
+            </Typography>
             <Typography style={styles.boldText}>${minTransaction}</Typography>
           </View>
         </View>

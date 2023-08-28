@@ -1,7 +1,7 @@
 import {View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Typography from '@/shared/components/typography';
-import {_styles} from './styles';
+import {styles} from './styles';
 
 interface PaymentBoxProps {
   image: React.ReactNode;
@@ -9,10 +9,12 @@ interface PaymentBoxProps {
 
 const PaymentBox = ({image}: PaymentBoxProps) => {
   return (
-    <View style={_styles.container}>
-      <View style={_styles.imageContainer}>{image}</View>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>{image}</View>
       <TouchableOpacity>
-        <Typography style={_styles.changeButton}>Change</Typography>
+        <Typography style={styles.changeButton}>
+          payments.paymentBox.button
+        </Typography>
       </TouchableOpacity>
     </View>
   );

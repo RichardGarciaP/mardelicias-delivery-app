@@ -83,6 +83,18 @@
   },
   "payments": {
     "title": "Medios de Pago",
-    "button": "Nuevo Medio de Pago"
+    "button": "Nuevo Medio de Pago",
+    "paymentBox": {
+      "button": "Cambiar"
+    }
+  },
+  "vouchers": {
+    "title": "Vouchers",
+    "button": "Nuevo Cupón",
+    "couponBox": {
+      "couponCode": "Código del cupón:",
+      "date": "Válido hasta",
+      "transaction": "Valor Mínimo"
+    }
   }
 }

@@ -83,6 +83,18 @@
   },
   "payments": {
     "title": "Payments",
-    "button": "Add New Payment"
+    "button": "Add New Payment",
+    "paymentBox": {
+      "button": "Change"
+    }
+  },
+  "vouchers": {
+    "title": "Vouchers",
+    "button": "Add New Voucher",
+    "couponBox": {
+      "couponCode": "Your coupon code:",
+      "date": "Valid until",
+      "transaction": "Min. Transaction"
+    }
   }
 }
