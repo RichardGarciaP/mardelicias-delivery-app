@@ -85,5 +85,8 @@
     "shipping_type": "Escoger metodo de envio",
     "chose_payment_method": "Escoger metodo de pago",
     "method_type": "Escoger medoto de pago"
+  },
+  "payments": {
+    "button": "Agregar metodo de pago"
   }
 }

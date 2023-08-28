@@ -1,11 +1,10 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import Wrapper from '@/shared/components/wrapper';
 import HeaderWithIcon from '@/shared/components/headerBack';
 import Typography from '@/shared/components/typography';
 import Input from '@/shared/components/input';
 import {Button} from '@/shared/components/buttons';
-import {semantic} from '@/shared/constants/colors';
 import {normalize} from '@/shared/helpers';
 import Icon from '@/shared/components/icon';
 import {mastercard} from '@/shared/assets/icons';
@@ -25,15 +24,7 @@ const NewPayment = () => {
 
           <View style={styles.dotsContainer}>
             {new Array(9).fill(0).map((_, index) => (
-              <View
-                key={index}
-                style={{
-                  width: normalize(12),
-                  height: normalize(12),
-                  borderRadius: normalize(6),
-                  backgroundColor: semantic.fill.f03,
-                }}
-              />
+              <View key={index} style={styles.bigDot} />
             ))}
           </View>
 
@@ -50,15 +41,7 @@ const NewPayment = () => {
                   },
                 ]}>
                 {new Array(10).fill(0).map((_, index) => (
-                  <View
-                    key={index}
-                    style={{
-                      width: normalize(8),
-                      height: normalize(8),
-                      borderRadius: normalize(6),
-                      backgroundColor: semantic.fill.f03,
-                    }}
-                  />
+                  <View key={index} style={styles.smallDot} />
                 ))}
               </View>
             </View>
@@ -74,15 +57,7 @@ const NewPayment = () => {
                   },
                 ]}>
                 {new Array(10).fill(0).map((_, index) => (
-                  <View
-                    key={index}
-                    style={{
-                      width: normalize(8),
-                      height: normalize(8),
-                      borderRadius: normalize(6),
-                      backgroundColor: semantic.fill.f03,
-                    }}
-                  />
+                  <View key={index} style={styles.smallDot} />
                 ))}
               </View>
             </View>

@@ -27,6 +27,18 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
     width: '100%',
   },
+  bigDot: {
+    width: normalize(12),
+    height: normalize(12),
+    borderRadius: normalize(6),
+    backgroundColor: semantic.fill.f03,
+  },
+  smallDot: {
+    width: normalize(8),
+    height: normalize(8),
+    borderRadius: normalize(6),
+    backgroundColor: semantic.fill.f03,
+  },
   rowBetween: {
     flexDirection: 'row',
     justifyContent: 'space-between',

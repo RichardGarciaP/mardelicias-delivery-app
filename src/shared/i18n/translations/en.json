@@ -94,5 +94,8 @@
     "cardName": "Card Name",
     "cvv": "CVV",
     "button": "Add New Payment"
+  },
+  "payments": {
+    "button": "Add New Payment"
   }
 }

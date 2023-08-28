@@ -7,7 +7,7 @@ import Icon from '@/shared/components/icon';
 import {applePay, filter, paypal, search} from '@/shared/assets/icons';
 import PaymentBox from './components/PaymentBox';
 import {ButtonOutline} from '@/shared/components/buttons';
-import {_styles} from './styles';
+import {styles} from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
 import {NavigationProps} from '@/shared/routes/stack';
 import {useNavigation} from '@react-navigation/native';
@@ -28,9 +28,9 @@ const Payments = () => {
 
   return (
     <Wrapper>
-      <View style={_styles.container}>
+      <View style={styles.container}>
         <HeaderWithIcon title="Payments" />
-        <View style={_styles.searchContainer}>
+        <View style={styles.searchContainer}>
           <Input
             leftIcon={<Icon icon={search} />}
             rightIcon={<Icon icon={filter} />}
@@ -47,7 +47,7 @@ const Payments = () => {
         </View>
 
         <ButtonOutline
-          title="Add New Payment"
+          title="payments.button"
           onPress={() => navigate('newPayment')}
         />
       </View>
