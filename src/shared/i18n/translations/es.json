@@ -41,16 +41,21 @@
     "confirm_address": "Confirmar dirección",
     "amount": "Cantidad",
     "shipping": "Envio",
-    "total": "Total"
+    "total": "Total",
+    "select_shipping": "Seleccionar envio"
   },
-  "order": {
-    "checkout": {
-      "delivery_options": "Opciones de envio",
-      "order_summary": "Resumen de orden",
-      "others_bought": "Otros tambien compraron",
-      "payment_summary": "Resumen de pago",
-      "payment_method": "Metodo de pago"
-    }
+  "orders": {
+    "title": "Ordenes",
+    "progress": "En proceso",
+    "success": "Completados",
+    "canceled": "Cancelados",
+    "track_order": "Seguimiento"
+  },
+  "tracking": {
+    "title": "Seguimiento",
+    "estimate_delivery": "Entrega estimada",
+    "shipment": "Envió",
+    "packet_delivery": "Paquete en entrega"
   },
   "general": {
     "typing_name": "Escribe tu nombre",

@@ -10,7 +10,9 @@ import { currencyType } from "@/shared/constants/global";
 import {styles} from './styles'
 import AddressSelect from "@/modules/private/checkout/components/addressSelect";
 import ProductList from "@/shared/components/productList";
-import Select from "@/modules/private/checkout/components/select";
+import ShippingSelect from "@/modules/private/checkout/components/shippingSelect";
+import PaymentMethodSelect from "@/modules/private/checkout/components/paymentMethodSelect";
+import ResumeTransaction from "@/shared/components/resumeTransaction";
 
 export default function Checkout() {
 
@@ -23,56 +25,14 @@ export default function Checkout() {
           <View style={styles.body}>
             <AddressSelect />
             <ProductList />
-            <Select
-              title={"general.chose_payment_method"}
-              description={"general.method_type"}
-              icon={truck}
-            />
-            <Select
-              title={"general.chose_shipping"}
-              description={"general.shipping_type"}
-              icon={creditCardPlus}
-            />
+            <ShippingSelect />
+            <PaymentMethodSelect />
 
-            <View style={styles.resume}>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.amount"}</Typography>
-                <Typography translate={false}>{currencyType} 83.00</Typography>
-              </View>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.shipping"}</Typography>
-                <Typography translate={false}>-</Typography>
-              </View>
-              <View style={styles.containerResumeText}>
-                <Typography>{"checkout.total"}</Typography>
-                <Typography translate={false}>-</Typography>
-              </View>
-            </View>
+            <ResumeTransaction />
           </View>
-          {/*<ListOptionCard options={
-            [
-              {
-                id: '1',
-                icon: location,
-                title: 'Home',
-                description: 'Snow Street, San Francisco, California 42343',
-                active: true
-              },
-              {
-                id: '2',
-                icon: location,
-                title: 'Parent House',
-                description: 'Snow Street, San Francisco, California 423433123',
-                active: false
-              },
-            ]
-          } />
-
-          <ButtonOutline title="checkout.new_address" />
-          */}
         </View>
       </Wrapper>
-      <Button title="checkout.confirm_address" />
+      <Button title="general.continue" />
       <View style={{height: normalize(40)}} />
     </View>
   )

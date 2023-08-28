@@ -17,6 +17,8 @@ import Checkout from '@/modules/private/checkout';
 import EditProfile from '@/modules/private/profile/sections/EditProfile';
 import Vouchers from '@/modules/private/profile/sections/Vouchers';
 import Payments from '@/modules/private/profile/sections/Payments';
+import Tracking from '@/modules/private/orders/sections/tracking';
+import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
 export type RootStackParamList = {
   login: undefined;
@@ -34,6 +36,8 @@ export type RootStackParamList = {
   editProfile: undefined;
   vouchers: undefined;
   payments: undefined;
+  tracking: undefined;
+  eReceipt: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -121,6 +125,16 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'payments',
     component: Payments,
+    private: true,
+  },
+  {
+    path: 'tracking',
+    component: Tracking,
+    private: true,
+  },
+  {
+    path: 'eReceipt',
+    component: EReceipt,
     private: true,
   },
 ];

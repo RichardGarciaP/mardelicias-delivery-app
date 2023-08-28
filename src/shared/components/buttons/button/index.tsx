@@ -11,6 +11,7 @@ interface ButtonProps {
   title?: string | undefined;
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
   loading?: boolean | undefined;
+  sm?: boolean
 }
 export default function Button({
   disabled,
@@ -18,8 +19,9 @@ export default function Button({
   title = 'Done',
   onPress,
   loading,
+  sm,
 }: ButtonProps) {
-  const styles = _styles(disabled);
+  const styles = _styles(disabled, sm);
   return (
     <TouchableOpacity disabled={disabled} onPress={onPress} style={styles.container}>
       {leftIcon && leftIcon}

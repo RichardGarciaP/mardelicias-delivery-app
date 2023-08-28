@@ -7,6 +7,7 @@ import {
 } from '@/shared/assets/icons';
 import Cart from '@/modules/private/cart';
 import Profile from '@/modules/private/profile';
+import Orders from "@/modules/private/orders";
 
 export default [
   {
@@ -28,7 +29,7 @@ export default [
     displayName: 'general.chat',
     name: 'chat',
     icon: shoppingBag,
-    component: Home,
+    component: Orders,
   },
   {
     id: '4',

@@ -21,14 +21,15 @@ export interface DeliveryOption {
 export interface ProductDTO {
   id: string;
   category: string;
-  description: string
-  discount: string
+  description?: string
+  discount?: string
   image: string;
   name: string
-  price: string;
-  state: string
-  variantId: VariantDTO[]
-  cant?: number
+  price: number;
+  state?: string
+  // variantId: VariantDTO[]
+  cant?: number;
+  size?: string
 }
 
 export interface VariantDTO {

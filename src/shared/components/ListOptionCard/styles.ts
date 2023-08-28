@@ -11,10 +11,10 @@ const defaultContainer: ViewStyle = {
   borderRadius: normalize(16),
   marginVertical: normalize(12)
 }
-export const _styles = (isDarkMode: boolean) => StyleSheet.create({
+export const _styles = (isDarkMode: boolean, active: boolean) => StyleSheet.create({
   container: {
     ...defaultContainer,
-    borderColor: semantic.fill.f04,
+    borderColor: active ? palette.main.p500 : semantic.fill.f04,
   },
   containerActive: {
     ...defaultContainer,
@@ -44,5 +44,13 @@ export const _styles = (isDarkMode: boolean) => StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  price: {
+    fontWeight: '700',
+    marginRight: normalize(12)
   }
 })
