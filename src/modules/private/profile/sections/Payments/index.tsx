@@ -29,7 +29,7 @@ const Payments = () => {
   return (
     <Wrapper>
       <View style={styles.container}>
-        <HeaderWithIcon title="Payments" />
+        <HeaderWithIcon title="payments.title" />
         <View style={styles.searchContainer}>
           <Input
             leftIcon={<Icon icon={search} />}

@@ -1,4 +1,5 @@
 import {
+  arrowBack,
   dots,
   edit,
   eyeFilled,
@@ -24,10 +25,30 @@ import {styles} from './styles';
 import {normalize} from '@/shared/helpers';
 import {NavigationProps} from '@/shared/routes/stack';
 import {useNavigation} from '@react-navigation/native';
+import ButtonSheet from '@/shared/components/buttonSheet';
+import ListOptionCard, {
+  OptionCardOptions,
+} from '@/shared/components/ListOptionCard';
+import {Button} from '@/shared/components/buttons';
 
 const Profile = () => {
   const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(false);
   const {navigate} = useNavigation<NavigationProps>();
+
+  const [openModal, setOpenModal] = useState(false);
+  const [addressSelected, setAddressSelected] = useState<OptionCardOptions>();
+
+  function onSelectAddress(option: OptionCardOptions) {
+    setAddressSelected(option);
+  }
+  function toggleModal() {
+    setOpenModal(!openModal);
+  }
+
+  function navigateToNewAddress() {
+    toggleModal();
+    navigate('addNewAddress');
+  }
 
   return (
     <Wrapper>
@@ -88,7 +109,11 @@ const Profile = () => {
         <Section
           title="Account Setting"
           elements={[
-            {name: 'Address', leftIcon: <Icon icon={location} />},
+            {
+              name: 'Address',
+              leftIcon: <Icon icon={location} />,
+              onPress: () => toggleModal(),
+            },
             {
               name: 'Payment methods',
               leftIcon: <Icon icon={walletFilled} />,
@@ -121,6 +146,48 @@ const Profile = () => {
           title="Support"
           elements={[{name: 'Help Center', leftIcon: <Icon icon={help} />}]}
         />
+
+        <ButtonSheet dispatch={openModal}>
+          <View style={{padding: normalize(24)}}>
+            <TouchableOpacity
+              onPress={toggleModal}
+              style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Icon icon={arrowBack} />
+              <Typography
+                style={{
+                  fontWeight: '700',
+                  fontSize: normalize(24),
+                  marginLeft: normalize(10),
+                }}>
+                {'general.address'}
+              </Typography>
+            </TouchableOpacity>
+
+            <ListOptionCard
+              value={addressSelected}
+              onChange={onSelectAddress}
+              options={[
+                {
+                  id: '1',
+                  icon: location,
+                  title: 'Home',
+                  description: 'Snow Street, San Francisco, California 42343',
+                  active: false,
+                },
+                {
+                  id: '2',
+                  icon: location,
+                  title: 'Parent House',
+                  description:
+                    'Snow Street, San Francisco, California 423433123',
+                  active: false,
+                },
+              ]}
+            />
+
+            <Button onPress={navigateToNewAddress} title="Add New Address" />
+          </View>
+        </ButtonSheet>
       </View>
     </Wrapper>
   );

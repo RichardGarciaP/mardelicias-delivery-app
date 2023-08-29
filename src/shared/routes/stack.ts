@@ -16,10 +16,13 @@ import Reviews from '@/modules/private/detailPlant/sections/reviews';
 import Checkout from '@/modules/private/checkout';
 import EditProfile from '@/modules/private/profile/sections/EditProfile';
 import Vouchers from '@/modules/private/profile/sections/Vouchers';
+
+import NewPayment from '@/modules/private/profile/sections/Payments/components/NewPayment';
+import Payments from '@/modules/private/profile/sections/Payments';
 import Tracking from '@/modules/private/orders/sections/tracking';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
-import Payments from '@/modules/private/profile/sections/Payments';
-import NewPayment from '@/modules/private/profile/sections/Payments/components/NewPayment';
+
+import NewAddress from '@/modules/private/profile/sections/NewAddress';
 
 export type RootStackParamList = {
   login: undefined;
@@ -40,6 +43,7 @@ export type RootStackParamList = {
   eReceipt: undefined;
   payments: undefined;
   newPayment: undefined;
+  addNewAddress: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -125,6 +129,11 @@ const RoutesStack: RouteItem[] = [
     private: true,
   },
   {
+    path: 'payments',
+    component: Payments,
+    private: true,
+  },
+  {
     path: 'tracking',
     component: Tracking,
     private: true,
@@ -135,13 +144,13 @@ const RoutesStack: RouteItem[] = [
     private: true,
   },
   {
-    path: 'payments',
-    component: Payments,
+    path: 'newPayment',
+    component: NewPayment,
     private: true,
   },
   {
-    path: 'newPayment',
-    component: NewPayment,
+    path: 'addNewAddress',
+    component: NewAddress,
     private: true,
   },
 ];

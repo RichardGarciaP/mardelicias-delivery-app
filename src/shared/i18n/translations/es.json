@@ -86,7 +86,39 @@
     "chose_payment_method": "Escoger metodo de pago",
     "method_type": "Escoger medoto de pago"
   },
+  "newPayment": {
+    "title": "Nuevo método de pago",
+    "cardHolderName": "Titular de la tarjeta",
+    "expiryDate": "Fecha de expiracion",
+    "cardNumber": "No. de la tarjeta",
+    "cardName": "Nombre de la tarjeta",
+    "cvv": "CVV",
+    "button": "Añadir nuevo método"
+  },
   "payments": {
-    "button": "Agregar metodo de pago"
+    "button": "Agregar metodo de pago",
+    "title": "Medios de Pago",
+    "paymentBox": {
+      "button": "Cambiar"
+    }
+  },
+  "vouchers": {
+    "title": "Vouchers",
+    "button": "Nuevo Cupón",
+    "couponBox": {
+      "couponCode": "Código del cupón:",
+      "date": "Válido hasta",
+      "transaction": "Valor Mínimo"
+    }
+  },
+  "newAddress": {
+    "title": "Add New Address",
+    "subTitle": "Address Details",
+    "name": "Name Address",
+    "address": "Address",
+    "namePlaceholder": "Home",
+    "addressPlaceholder": "Snow Street, San Francisco",
+    "checkboxText": "Make this the default address",
+    "button": "Add"
   }
 }
