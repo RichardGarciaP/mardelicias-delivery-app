@@ -86,6 +86,22 @@
     "chose_payment_method": "Chose payment method",
     "method_type": "Chose Payment Type"
   },
+  "payments": {
+    "title": "Payments",
+    "button": "Add New Payment",
+    "paymentBox": {
+      "button": "Change"
+    }
+  },
+  "vouchers": {
+    "title": "Vouchers",
+    "button": "Add New Voucher",
+    "couponBox": {
+      "couponCode": "Your coupon code:",
+      "date": "Valid until",
+      "transaction": "Min. Transaction"
+    }
+  },
   "newAddress": {
     "title": "Add New Address",
     "subTitle": "Address Details",

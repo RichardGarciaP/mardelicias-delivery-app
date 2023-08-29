@@ -1,7 +1,7 @@
 import {View, TouchableOpacity, ColorValue} from 'react-native';
 import React from 'react';
 import Typography from '@/shared/components/typography';
-import {_styles} from './styles';
+import {styles} from './styles';
 import {palette} from '@/shared/constants/colors';
 import Icon from '@/shared/components/icon';
 import {calendar, dolar, plant} from '@/shared/assets/icons';
@@ -32,9 +32,9 @@ const CouponBox = ({
   borderColor = palette.main.p500,
 }: CouponBoxProps) => {
   return (
-    <TouchableOpacity style={[_styles.container, {borderColor}]}>
-      <View style={[_styles.upperPart, {backgroundColor}]}>
-        <View style={[_styles.vocherInfo, {flex: 0.8}]}>
+    <TouchableOpacity style={[styles.container, {borderColor}]}>
+      <View style={[styles.upperPart, {backgroundColor}]}>
+        <View style={[styles.vocherInfo, {flex: 0.8}]}>
           {upperIcon}
           <View
             style={{
@@ -55,10 +55,10 @@ const CouponBox = ({
             </Typography>
           </View>
         </View>
-        <View style={_styles.divider} />
-        <View style={[_styles.vocherInfo, {justifyContent: 'space-between'}]}>
+        <View style={styles.divider} />
+        <View style={[styles.vocherInfo, {justifyContent: 'space-between'}]}>
           <Typography style={{color: '#FFF', fontWeight: '500', fontSize: 12}}>
-            Your coupon code:
+            vouchers.couponBox.couponCode
           </Typography>
           <Typography style={{color: '#FFF', fontWeight: '700', fontSize: 16}}>
             {code}
@@ -67,15 +67,17 @@ const CouponBox = ({
       </View>
 
       {/* row */}
-      <View style={_styles.bottomPart}>
+      <View style={styles.bottomPart}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           {leftIcon}
           <View
             style={{
               marginLeft: 10,
             }}>
-            <Typography style={_styles.lightText}>Valid Until</Typography>
-            <Typography style={_styles.boldText}>{validDate}</Typography>
+            <Typography style={styles.lightText}>
+              vouchers.couponBox.date
+            </Typography>
+            <Typography style={styles.boldText}>{validDate}</Typography>
           </View>
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -84,8 +86,10 @@ const CouponBox = ({
             style={{
               marginLeft: 10,
             }}>
-            <Typography style={_styles.lightText}>Min Transaction</Typography>
-            <Typography style={_styles.boldText}>${minTransaction}</Typography>
+            <Typography style={styles.lightText}>
+              vouchers.couponBox.transaction
+            </Typography>
+            <Typography style={styles.boldText}>${minTransaction}</Typography>
           </View>
         </View>
       </View>

@@ -16,10 +16,11 @@ import Reviews from '@/modules/private/detailPlant/sections/reviews';
 import Checkout from '@/modules/private/checkout';
 import EditProfile from '@/modules/private/profile/sections/EditProfile';
 import Vouchers from '@/modules/private/profile/sections/Vouchers';
+import Payments from '@/modules/private/profile/sections/Payments';
 import Tracking from '@/modules/private/orders/sections/tracking';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
+
 import NewAddress from '@/modules/private/profile/sections/NewAddress';
-import Payments from '@/modules/private/profile/sections/Payments';
 
 export type RootStackParamList = {
   login: undefined;
@@ -125,6 +126,11 @@ const RoutesStack: RouteItem[] = [
     private: true,
   },
   {
+    path: 'payments',
+    component: Payments,
+    private: true,
+  },
+  {
     path: 'tracking',
     component: Tracking,
     private: true,
@@ -137,11 +143,6 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'addNewAddress',
     component: NewAddress,
-    private: true,
-  },
-  {
-    path: 'payments',
-    component: Payments,
     private: true,
   },
 ];
