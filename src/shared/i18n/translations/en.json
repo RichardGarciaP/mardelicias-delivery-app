@@ -101,5 +101,15 @@
       "date": "Valid until",
       "transaction": "Min. Transaction"
     }
+  },
+  "newAddress": {
+    "title": "Add New Address",
+    "subTitle": "Address Details",
+    "name": "Name Address",
+    "address": "Address",
+    "namePlaceholder": "Home",
+    "addressPlaceholder": "Snow Street, San Francisco",
+    "checkboxText": "Make this the default address",
+    "button": "Add"
   }
 }
