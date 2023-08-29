@@ -47,3 +47,4 @@ export {default as check} from './check.png';
 export {default as paypal} from './paypal.png';
 export {default as map} from './maps.png';
 export {default as applePay} from './apple_pay.png';
+export {default as mastercard} from './mastercard.png';
