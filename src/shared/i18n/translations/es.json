@@ -85,5 +85,15 @@
     "shipping_type": "Escoger metodo de envio",
     "chose_payment_method": "Escoger metodo de pago",
     "method_type": "Escoger medoto de pago"
+  },
+  "newAddress": {
+    "title": "Add New Address",
+    "subTitle": "Address Details",
+    "name": "Name Address",
+    "address": "Address",
+    "namePlaceholder": "Home",
+    "addressPlaceholder": "Snow Street, San Francisco",
+    "checkboxText": "Make this the default address",
+    "button": "Add"
   }
 }
