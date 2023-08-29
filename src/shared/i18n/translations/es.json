@@ -86,9 +86,18 @@
     "chose_payment_method": "Escoger metodo de pago",
     "method_type": "Escoger medoto de pago"
   },
+  "newPayment": {
+    "title": "Nuevo método de pago",
+    "cardHolderName": "Titular de la tarjeta",
+    "expiryDate": "Fecha de expiracion",
+    "cardNumber": "No. de la tarjeta",
+    "cardName": "Nombre de la tarjeta",
+    "cvv": "CVV",
+    "button": "Añadir nuevo método"
+  },
   "payments": {
+    "button": "Agregar metodo de pago",
     "title": "Medios de Pago",
-    "button": "Nuevo Medio de Pago",
     "paymentBox": {
       "button": "Cambiar"
     }

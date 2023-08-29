@@ -86,6 +86,15 @@
     "chose_payment_method": "Chose payment method",
     "method_type": "Chose Payment Type"
   },
+  "newPayment": {
+    "title": "Add New Payment",
+    "cardHolderName": "Card Holder Name",
+    "expiryDate": "Expiry Date",
+    "cardNumber": "Card Number",
+    "cardName": "Card Name",
+    "cvv": "CVV",
+    "button": "Add New Payment"
+  },
   "payments": {
     "title": "Payments",
     "button": "Add New Payment",
