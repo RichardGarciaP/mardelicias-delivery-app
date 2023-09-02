@@ -56,7 +56,7 @@ const NewPayment = () => {
                     marginTop: normalize(12),
                   },
                 ]}>
-                {new Array(10).fill(0).map((_, index) => (
+                {new Array(4).fill(0).map((_, index) => (
                   <View key={index} style={styles.smallDot} />
                 ))}
               </View>
@@ -71,10 +71,17 @@ const NewPayment = () => {
             marginTop: normalize(24),
             gap: normalize(24),
           }}>
-          <Input label="newPayment.cardNumber" />
-          <Input label="newPayment.cardHolderName" />
-          <Input label="newPayment.expiryDate" />
-          <Input label="newPayment.cvv" />
+          <Input placeholder="1234 5678 9101 1123" label="newPayment.cardNumber" />
+          <Input placeholder="Soadtech" label="newPayment.cardHolderName" />
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{flex: 0.94}}>
+              <Input placeholder="1226" label="newPayment.expiryDate" />
+            </View>
+            <View style={{width: 50}} />
+            <View style={{flex: 0.95}}>
+              <Input placeholder="000" label="newPayment.cvv" />
+            </View>
+          </View>
           <Button title="newPayment.button" />
         </View>
       </View>

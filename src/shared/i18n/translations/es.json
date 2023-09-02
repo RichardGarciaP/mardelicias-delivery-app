@@ -84,7 +84,12 @@
     "chose_shipping": "Elegir Envio",
     "shipping_type": "Escoger metodo de envio",
     "chose_payment_method": "Escoger metodo de pago",
-    "method_type": "Escoger medoto de pago"
+    "method_type": "Escoger medoto de pago",
+    "language": "Lenguaje",
+    "login": "Iniciar sesión",
+    "sign_up": "Crear cuenta",
+    "welcome_message": "Empecemos a crecer: ¡comience su viaje vegetal con nuestra aplicación!",
+    "buy": "Comprar"
   },
   "newPayment": {
     "title": "Nuevo método de pago",
@@ -120,5 +125,18 @@
     "addressPlaceholder": "Snow Street, San Francisco",
     "checkboxText": "Make this the default address",
     "button": "Add"
+  },
+  "profile": {
+    "title": "Perfil",
+    "voucher": "Facturas",
+    "address": "Direcciones",
+    "payment_method": "Metodos de pago",
+    "dark_mode": "Modo oscuro",
+    "logout": "Cerrar sesión",
+    "help_center": "Centro de ayuda",
+    "general": "General",
+    "account_settings": "Ajustes de cuenta",
+    "app_settings": "Ajustes de app",
+    "support": "Soporte"
   }
 }

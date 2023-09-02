@@ -19,9 +19,9 @@ export default function Welcome() {
       <Hero />
 
       <View style={styles.body}>
-        <Button onPress={() => navigateTo('login')} title="Login" />
+        <Button onPress={() => navigateTo('login')} title="general.login" />
         <View style={{marginVertical: 10}} />
-        <ButtonOutline onPress={() => navigateTo('createAccount')} title="Sign Up" />
+        <ButtonOutline onPress={() => navigateTo('createAccount')} title="general.sign_up" />
       </View>
     </View>
   )

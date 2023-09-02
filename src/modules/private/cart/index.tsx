@@ -69,7 +69,7 @@ export default function Cart() {
         </ButtonSheet>
       </Wrapper>
       <View style={{paddingHorizontal: normalize(24), backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500}}>
-        <Button onPress={() => navigate('checkout')} title="Buy" />
+        <Button onPress={() => navigate('checkout')} title="general.buy" />
       </View>
     </View>
   )

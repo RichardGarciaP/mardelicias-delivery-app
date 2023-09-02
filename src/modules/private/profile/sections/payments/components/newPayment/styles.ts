@@ -34,15 +34,17 @@ export const styles = StyleSheet.create({
     backgroundColor: semantic.fill.f03,
   },
   smallDot: {
-    width: normalize(8),
-    height: normalize(8),
+    width: normalize(4),
+    height: normalize(4),
     borderRadius: normalize(6),
     backgroundColor: semantic.fill.f03,
   },
   rowBetween: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     width: '100%',
+    flex: 1,
   },
   textLight: {
     fontWeight: '400',

@@ -26,6 +26,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { palette, semantic } from "@/shared/constants/colors";
 import Icon from "@/shared/components/icon";
 import useDarkMode from "@/shared/hooks/useDarkMode";
+import useEffectOnce from "@/shared/hooks/useEffectOnce";
+import { storage } from "@/shared/helpers";
+import i18n from "i18next";
 
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
@@ -66,13 +69,21 @@ function TabNavigation() {
 }
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  async function getTranslate() {
+    const ing = await storage.get('language')
+    console.log('ing', ing)
+    if (ing) {
+      await i18n.changeLanguage(ing);
+      return
+    }
+    await i18n.changeLanguage('en');
+  }
+  useEffectOnce(() => {
+    getTranslate().catch()
+  }, [])
 
-  const [toggle, setToggle] = useState(false)
+
 
   return (
     <NavigationContainer>

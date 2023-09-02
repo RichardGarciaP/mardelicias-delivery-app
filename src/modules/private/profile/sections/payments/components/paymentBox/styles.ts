@@ -19,7 +19,9 @@ export const styles = StyleSheet.create({
     fontSize: 14,
   },
   imageContainer: {
-    width: normalize(60),
-    height: normalize(20),
+    width: normalize(70),
+    height: normalize(40),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

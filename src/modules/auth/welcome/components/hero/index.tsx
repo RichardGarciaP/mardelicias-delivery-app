@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <ImageBackground style={styles.hero} source={heroImage}>
       <Image resizeMode="contain" style={styles.logo} source={logo} />
-      <Typography style={styles.text}>Let's Get Growing: Start Your Plant Journey with Our App!</Typography>
+      <Typography style={styles.text}>{"general.welcome_message"}</Typography>
     </ImageBackground>
   )
 }

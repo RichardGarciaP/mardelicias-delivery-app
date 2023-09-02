@@ -62,12 +62,9 @@ const Profile = () => {
                 fontSize: 24,
                 marginLeft: normalize(10),
               }}>
-              Profile
+              {"profile.title"}
             </Typography>
           </View>
-          <TouchableOpacity>
-            <Icon icon={dots} />
-          </TouchableOpacity>
         </View>
 
         <View style={styles.profileInfo}>
@@ -95,11 +92,10 @@ const Profile = () => {
         </View>
 
         <Section
-          title="General"
+          title="profile.general"
           elements={[
-            {name: 'My Order', leftIcon: <Icon icon={order} />},
             {
-              name: 'Vocher',
+              name: 'profile.voucher',
               leftIcon: <Icon icon={vocher} />,
               onPress: () => navigate('vouchers'),
             },
@@ -107,20 +103,20 @@ const Profile = () => {
         />
 
         <Section
-          title="Account Setting"
+          title="profile.account_settings"
           elements={[
             {
-              name: 'Address',
+              name: 'profile.address',
               leftIcon: <Icon icon={location} />,
               onPress: () => toggleModal(),
             },
             {
-              name: 'Payment methods',
+              name: 'profile.payment_method',
               leftIcon: <Icon icon={walletFilled} />,
               onPress: () => navigate('payments'),
             },
             {
-              name: 'Dark Mode',
+              name: 'profile.dark_mode',
               leftIcon: <Icon icon={eyeFilled} />,
               rightElement: (
                 <Toggle
@@ -129,22 +125,24 @@ const Profile = () => {
                 />
               ),
             },
-            {name: 'Logout', leftIcon: <Icon icon={logout} />},
+            {name: 'profile.logout', leftIcon: <Icon icon={logout} />},
           ]}
         />
 
         <Section
-          title="App Setting"
+          title="profile.app_settings"
           elements={[
-            {name: 'Language', leftIcon: <Icon icon={order} />},
-            {name: 'Notification', leftIcon: <Icon icon={notification} />},
-            {name: 'Security', leftIcon: <Icon icon={security} />},
+            {
+              name: 'general.language',
+              leftIcon: <Icon icon={order} />,
+              onPress: () => navigate('language'),
+            }
           ]}
         />
 
         <Section
-          title="Support"
-          elements={[{name: 'Help Center', leftIcon: <Icon icon={help} />}]}
+          title="profile.support"
+          elements={[{name: 'profile.help_center', leftIcon: <Icon icon={help} />}]}
         />
 
         <ButtonSheet dispatch={openModal}>

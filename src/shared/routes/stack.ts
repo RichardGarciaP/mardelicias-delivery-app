@@ -14,15 +14,16 @@ import Favorite from '@/modules/private/home/sections/favorite';
 import Notifications from '@/modules/private/home/sections/notifications';
 import Reviews from '@/modules/private/detailPlant/sections/reviews';
 import Checkout from '@/modules/private/checkout';
-import EditProfile from '@/modules/private/profile/sections/EditProfile';
-import Vouchers from '@/modules/private/profile/sections/Vouchers';
+import EditProfile from '@/modules/private/profile/sections/editProfile';
+import Vouchers from '@/modules/private/profile/sections/vouchers';
 
-import NewPayment from '@/modules/private/profile/sections/Payments/components/NewPayment';
-import Payments from '@/modules/private/profile/sections/Payments';
+import NewPayment from '@/modules/private/profile/sections/payments/components/newPayment';
+import Payments from '@/modules/private/profile/sections/payments';
 import Tracking from '@/modules/private/orders/sections/tracking';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
-import NewAddress from '@/modules/private/profile/sections/NewAddress';
+import NewAddress from '@/modules/private/profile/sections/newAddress';
+import Language from "@/modules/private/profile/sections/language";
 
 export type RootStackParamList = {
   login: undefined;
@@ -44,6 +45,7 @@ export type RootStackParamList = {
   payments: undefined;
   newPayment: undefined;
   addNewAddress: undefined;
+  language: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -151,6 +153,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'addNewAddress',
     component: NewAddress,
+    private: true,
+  },
+  {
+    path: 'language',
+    component: Language,
     private: true,
   },
 ];

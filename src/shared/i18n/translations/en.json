@@ -84,7 +84,12 @@
     "chose_shipping": "Chose Shipping",
     "shipping_type": "Chose Shipping Type",
     "chose_payment_method": "Chose payment method",
-    "method_type": "Chose Payment Type"
+    "method_type": "Chose Payment Type",
+    "language": "Language",
+    "login": "Login",
+    "sign_up": "Sign Up",
+    "welcome_message": "Let's Get Growing: Start Your Plant Journey with Our App!",
+    "buy": "Buy"
   },
   "newPayment": {
     "title": "Add New Payment",
@@ -120,5 +125,18 @@
     "addressPlaceholder": "Snow Street, San Francisco",
     "checkboxText": "Make this the default address",
     "button": "Add"
+  },
+  "profile": {
+    "title": "Profile",
+    "voucher": "Voucher",
+    "address": "Address",
+    "payment_method": "Payment Methods",
+    "dark_mode": "Dark Mode",
+    "logout": "Logout",
+    "help_center": "Help Center",
+    "general": "General",
+    "account_settings": "Account Settings",
+    "app_settings": "App Settings",
+    "support": "Support"
   }
 }

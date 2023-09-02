@@ -5,7 +5,7 @@ import HeaderWithIcon from '@/shared/components/headerBack';
 import Input from '@/shared/components/input';
 import Icon from '@/shared/components/icon';
 import {filter, search} from '@/shared/assets/icons';
-import CouponBox from './components/CouponBox';
+import CouponBox from './components/couponBox';
 import {normalize} from '@/shared/helpers';
 
 const Vouchers = () => {
