@@ -85,5 +85,40 @@
     "shipping_type": "Chose Shipping Type",
     "chose_payment_method": "Chose payment method",
     "method_type": "Chose Payment Type"
+  },
+  "newPayment": {
+    "title": "Add New Payment",
+    "cardHolderName": "Card Holder Name",
+    "expiryDate": "Expiry Date",
+    "cardNumber": "Card Number",
+    "cardName": "Card Name",
+    "cvv": "CVV",
+    "button": "Add New Payment"
+  },
+  "payments": {
+    "title": "Payments",
+    "button": "Add New Payment",
+    "paymentBox": {
+      "button": "Change"
+    }
+  },
+  "vouchers": {
+    "title": "Vouchers",
+    "button": "Add New Voucher",
+    "couponBox": {
+      "couponCode": "Your coupon code:",
+      "date": "Valid until",
+      "transaction": "Min. Transaction"
+    }
+  },
+  "newAddress": {
+    "title": "Add New Address",
+    "subTitle": "Address Details",
+    "name": "Name Address",
+    "address": "Address",
+    "namePlaceholder": "Home",
+    "addressPlaceholder": "Snow Street, San Francisco",
+    "checkboxText": "Make this the default address",
+    "button": "Add"
   }
 }
