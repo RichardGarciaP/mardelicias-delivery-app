@@ -2,12 +2,12 @@ import {StyleSheet} from 'react-native';
 import {normalize} from '@/shared/helpers';
 import { palette, semantic } from "@/shared/constants/colors";
 
-export const styles = StyleSheet.create({
+export const _styles = (isDarkMode: boolean | undefined) => StyleSheet.create({
   parentContainer: {
     marginRight: normalize(14),
   },
   container: {
-    borderColor: '#EEEEEE',
+    borderColor: isDarkMode ? semantic.fill.f01 : '#EEEEEE',
     borderWidth: 1,
     paddingHorizontal: normalize(20),
     paddingVertical: normalize(12),

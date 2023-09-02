@@ -13,8 +13,11 @@ import Typography from "@/shared/components/typography";
 import {styles} from './styles'
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProps } from "@/shared/routes/stack";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 export default function Cart() {
+  const {isDarkMode} = useDarkMode()
   const {navigate} = useNavigation<NavigationProps>()
   const [openDeleteItem, setOpenDeleteItem] = useState(false)
   const [selectedProductToRemove, setSelectedProductToRemove] = useState({})
@@ -65,7 +68,7 @@ export default function Cart() {
           </View>
         </ButtonSheet>
       </Wrapper>
-      <View style={{paddingHorizontal: normalize(24), backgroundColor: 'white'}}>
+      <View style={{paddingHorizontal: normalize(24), backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500}}>
         <Button onPress={() => navigate('checkout')} title="Buy" />
       </View>
     </View>

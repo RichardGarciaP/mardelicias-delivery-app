@@ -8,8 +8,11 @@ import Icon from "@/shared/components/icon";
 import Typography from "@/shared/components/typography";
 import ListOptionCard, { OptionCardOptions } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 export default function PaymentMethodSelect() {
+  const {isDarkMode} = useDarkMode()
   const [openModal, setOpenModal] = useState(false)
   const [paymentSelected, setPaymentSelected] = useState<OptionCardOptions>();
 
@@ -33,7 +36,7 @@ export default function PaymentMethodSelect() {
       <ButtonSheet dispatch={openModal}>
         <View style={{padding: normalize(24)}}>
           <TouchableOpacity onPress={toggleModal} style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon icon={arrowBack} />
+            <Icon customStyles={{tintColor: isDarkMode ? semantic.fill.f04 : semantic.background.dark.d500}} icon={arrowBack} />
             <Typography style={{fontWeight: '700', fontSize: normalize(24), marginLeft: normalize(10)}}>{"checkout.select_shipping"}</Typography>
           </TouchableOpacity>
 

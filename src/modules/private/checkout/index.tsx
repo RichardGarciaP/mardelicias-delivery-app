@@ -13,11 +13,13 @@ import ProductList from "@/shared/components/productList";
 import ShippingSelect from "@/modules/private/checkout/components/shippingSelect";
 import PaymentMethodSelect from "@/modules/private/checkout/components/paymentMethodSelect";
 import ResumeTransaction from "@/shared/components/resumeTransaction";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 export default function Checkout() {
-
+  const {isDarkMode} = useDarkMode()
   return (
-    <View style={{flex: 1, paddingHorizontal: normalize(24), backgroundColor: 'white'}}>
+    <View style={{flex: 1, paddingHorizontal: normalize(24), backgroundColor: isDarkMode ? semantic.background.dark.d500 : semantic.background.white.w500}}>
       <Wrapper>
         <View>
           <HeaderWithIcon title={"checkout.title"} />
