@@ -142,7 +142,13 @@ const Profile = () => {
 
         <Section
           title="profile.support"
-          elements={[{name: 'profile.help_center', leftIcon: <Icon icon={help} />}]}
+          elements={[
+            {
+              name: 'profile.help_center',
+              leftIcon: <Icon icon={help} />,
+              onPress: () => navigate('chats')
+            }
+          ]}
         />
 
         <ButtonSheet dispatch={openModal}>

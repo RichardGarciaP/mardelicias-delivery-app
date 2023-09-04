@@ -24,6 +24,8 @@ import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
 import NewAddress from '@/modules/private/profile/sections/newAddress';
 import Language from "@/modules/private/profile/sections/language";
+import Conversation from "@/modules/private/conversation";
+import Chats from "@/modules/private/chats";
 
 export type RootStackParamList = {
   login: undefined;
@@ -46,6 +48,8 @@ export type RootStackParamList = {
   newPayment: undefined;
   addNewAddress: undefined;
   language: undefined;
+  conversation: undefined;
+  chats: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -158,6 +162,16 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'language',
     component: Language,
+    private: true,
+  },
+  {
+    path: 'chats',
+    component: Chats,
+    private: true,
+  },
+  {
+    path: 'conversation',
+    component: Conversation,
     private: true,
   },
 ];
