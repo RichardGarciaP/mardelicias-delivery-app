@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
-import {styles} from './styles'
+import {_styles} from './styles'
 import Typography from "@/shared/components/typography";
 import { activeOpacity } from "@/shared/constants/global";
+import useDarkMode from "@/shared/hooks/useDarkMode";
 
 interface TopNavigationProps {
   id: number,
@@ -28,12 +29,14 @@ export default function TopNavigation() {
     },
   ])
 
+  const {isDarkMode} = useDarkMode()
   function handleChange(tabSelected: TopNavigationProps) {
     setTabs(tabs.map(option => ({
       ...option,
       active: option.id === tabSelected.id
     })));
   }
+  const styles = _styles(isDarkMode)
   return (
     <View style={styles.container}>
       {tabs.map(tab => {

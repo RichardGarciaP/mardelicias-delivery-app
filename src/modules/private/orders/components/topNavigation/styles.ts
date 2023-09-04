@@ -5,13 +5,13 @@ import { normalize } from "@/shared/helpers";
 const tabDefault: ViewStyle = {
 
 }
-export const styles = StyleSheet.create({
+export const _styles = (isDarkMode: boolean) => StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderRadius: normalize(16),
-    backgroundColor: semantic.fill.f04,
+    backgroundColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     flex: 1,
     marginVertical: normalize(32),
   },

@@ -10,24 +10,20 @@ import useEffectOnce from "@/shared/hooks/useEffectOnce";
 
 const defaultOptions = [
   {
-    CustomLabel: () => {
-      return (
-        <Typography style={{flex: 1, marginVertical: 10}}>
-          English
-        </Typography>
-      )
-    },
+    CustomLabel: (
+      <Typography style={{flex: 1, marginVertical: 10}}>
+        English
+      </Typography>
+    ),
     id: 'en',
     active: true,
   },
   {
-    CustomLabel: () => {
-      return (
-        <Typography style={{flex: 1, marginVertical: 10}}>
-          Spanish
-        </Typography>
-      )
-    },
+    CustomLabel: (
+      <Typography style={{flex: 1, marginVertical: 10}}>
+        Spanish
+      </Typography>
+    ),
     id: 'es',
     active: false,
   },
@@ -45,24 +41,20 @@ export default function Language() {
     if (ing) {
       setLanguageActive([
         {
-          CustomLabel: () => {
-            return (
-              <Typography style={{flex: 1, marginVertical: 10}}>
-                English
-              </Typography>
-            )
-          },
+          CustomLabel: (
+            <Typography style={{flex: 1, marginVertical: 10}}>
+              English
+            </Typography>
+          ),
           id: 'en',
           active: ing === 'en',
         },
         {
-          CustomLabel: () => {
-            return (
-              <Typography style={{flex: 1, marginVertical: 10}}>
-                Spanish
-              </Typography>
-            )
-          },
+          CustomLabel: (
+            <Typography style={{flex: 1, marginVertical: 10}}>
+              Spanish
+            </Typography>
+          ),
           id: 'es',
           active: ing === 'es',
         },

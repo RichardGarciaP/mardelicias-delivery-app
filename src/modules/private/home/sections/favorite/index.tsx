@@ -74,56 +74,56 @@ export default function Favorite() {
             </View>
 
             <View>
-                <RadioButtons
-                  columns={1}
-                  options={[
-                    {
-                      id: '1',
-                      active: true,
-                      CustomLabel: (
-                        <Typography style={styles.flex1}>
-                          Latest Saved
-                        </Typography>
-                      )
-                    },
-                    {
-                      id: '2',
-                      active: false,
-                      CustomLabel: (
-                        <Typography style={styles.flex1}>
-                          Longest Saved
-                        </Typography>
-                      )
-                    },
-                    {
-                      id: '3',
-                      active: false,
-                      CustomLabel: (
-                        <Typography style={styles.flex1}>
-                          Most Reviews
-                        </Typography>
-                      )
-                    },
-                    {
-                      id: '4',
-                      active: false,
-                      CustomLabel: (
-                        <Typography style={styles.flex1}>
-                          Highest Price
-                        </Typography>
-                      )
-                    },
-                    {
-                      id: '5',
-                      active: false,
-                      CustomLabel: (
-                        <Typography style={styles.flex1}>
-                          Lowest Price
-                        </Typography>
-                      )
-                    },
-                  ]}
-                />
+              <RadioButtons
+                columns={1}
+                options={[
+                  {
+                    id: '1',
+                    active: true,
+                    CustomLabel: (
+                      <Typography style={styles.flex1}>
+                        Latest Saved
+                      </Typography>
+                    )
+                  },
+                  {
+                    id: '2',
+                    active: false,
+                    CustomLabel: (
+                      <Typography style={styles.flex1}>
+                        Longest Saved
+                      </Typography>
+                    )
+                  },
+                  {
+                    id: '3',
+                    active: false,
+                    CustomLabel: (
+                      <Typography style={styles.flex1}>
+                        Most Reviews
+                      </Typography>
+                    )
+                  },
+                  {
+                    id: '4',
+                    active: false,
+                    CustomLabel: (
+                      <Typography style={styles.flex1}>
+                        Highest Price
+                      </Typography>
+                    )
+                  },
+                  {
+                    id: '5',
+                    active: false,
+                    CustomLabel: (
+                      <Typography style={styles.flex1}>
+                        Lowest Price
+                      </Typography>
+                    )
+                  },
+                ]}
+              />
             </View>
           </View>
       </ButtonSheet>

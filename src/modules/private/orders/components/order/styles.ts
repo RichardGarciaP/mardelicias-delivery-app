@@ -18,7 +18,7 @@ export const _styles = (isDarkMode: boolean) => StyleSheet.create({
     flexDirection: 'row',
     borderRadius: normalize(16),
     borderWidth: 1,
-    borderColor: semantic.fill.f04,
+    borderColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     padding: normalize(8),
     marginTop: normalize(24),
     marginBottom: normalize(22)

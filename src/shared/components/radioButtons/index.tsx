@@ -28,8 +28,7 @@ export default function RadioButtons({
           {chunk.map((item, index) => (
             <View key={index} style={styles.item}>
               <RadioButton
-                // @ts-ignore
-                CustomLabel={item.CustomLabel}
+                CustomLabel={CustomLabel}
                 onChange={onHandleSelect}
                 option={item}
               />
