@@ -10,6 +10,8 @@ import { normalize } from "@/shared/helpers";
 import ListOptionCard, { Option, OptionCardOptions } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
 import ButtonSheet from "@/shared/components/buttonSheet";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 interface SelectCheckoutProps {
   title: string;
@@ -21,6 +23,10 @@ interface SelectCheckoutProps {
 }
 export default function Select({title, icon, description, showChange, callback, value}: SelectCheckoutProps) {
 
+  const {isDarkMode} = useDarkMode()
+  const stylesIcon = {
+    tintColor: isDarkMode ? semantic.background.white.w500 : semantic.text.grey
+  }
   return (
     <View style={styles.selects}>
 
@@ -37,11 +43,11 @@ export default function Select({title, icon, description, showChange, callback, 
       ) : (
         <TouchableOpacity onPress={callback} style={styles.containerSelect}>
           <View style={styles.row}>
-            <Icon icon={icon} />
+            <Icon customStyles={stylesIcon} icon={icon} />
             <Typography style={styles.textShippingType}>{description}</Typography>
           </View>
           <View>
-            <Icon icon={chevronLeft} />
+            <Icon customStyles={stylesIcon} icon={chevronLeft} />
           </View>
         </TouchableOpacity>
       )}

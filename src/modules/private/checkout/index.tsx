@@ -4,9 +4,6 @@ import Wrapper from "@/shared/components/wrapper";
 import HeaderWithIcon from "@/shared/components/headerBack";
 import { Button } from "@/shared/components/buttons";
 import { normalize } from "@/shared/helpers";
-import Typography from "@/shared/components/typography";
-import { creditCardPlus, truck } from "@/shared/assets/icons";
-import { currencyType } from "@/shared/constants/global";
 import {styles} from './styles'
 import AddressSelect from "@/modules/private/checkout/components/addressSelect";
 import ProductList from "@/shared/components/productList";

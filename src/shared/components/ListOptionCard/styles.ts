@@ -14,14 +14,14 @@ const defaultContainer: ViewStyle = {
 export const _styles = (isDarkMode: boolean, active: boolean) => StyleSheet.create({
   container: {
     ...defaultContainer,
-    borderColor: active ? palette.main.p500 : semantic.fill.f04,
+    borderColor: active ? palette.main.p500 : isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
   },
   containerActive: {
     ...defaultContainer,
     borderColor: palette.main.p400,
   },
   containerIcon: {
-    backgroundColor: isDarkMode ? 'red' : semantic.fill.f04,
+    backgroundColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     borderRadius: normalize(16),
     width: normalize(64),
     height: normalize(64),
@@ -31,7 +31,8 @@ export const _styles = (isDarkMode: boolean, active: boolean) => StyleSheet.crea
   },
   icon: {
     width: normalize(32),
-    height: normalize(32)
+    height: normalize(32),
+    tintColor: isDarkMode ? semantic.background.white.w500 : semantic.text.grey
   },
   title: {
     fontSize: normalize(16),

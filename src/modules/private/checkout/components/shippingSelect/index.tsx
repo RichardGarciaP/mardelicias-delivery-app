@@ -8,10 +8,16 @@ import Typography from "@/shared/components/typography";
 import ListOptionCard, { Option, OptionCardOptions } from "@/shared/components/ListOptionCard";
 import { Button } from "@/shared/components/buttons";
 import ButtonSheet from "@/shared/components/buttonSheet";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 export default function ShippingSelect() {
   const [openModal, setOpenModal] = useState(false)
   const [shippingSelected, setShippingSelected] = useState<OptionCardOptions>();
+  const {isDarkMode} = useDarkMode()
+  const stylesIcon = {
+    tintColor: isDarkMode ? semantic.background.white.w500 : semantic.text.grey
+  }
 
   function onSelectAddress(option: OptionCardOptions) {
     setShippingSelected(option)
@@ -33,7 +39,7 @@ export default function ShippingSelect() {
       <ButtonSheet dispatch={openModal}>
         <View style={{padding: normalize(24)}}>
           <TouchableOpacity onPress={toggleModal} style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon icon={arrowBack} />
+            <Icon customStyles={stylesIcon} icon={arrowBack} />
             <Typography style={{fontWeight: '700', fontSize: normalize(24), marginLeft: normalize(10)}}>{"checkout.select_shipping"}</Typography>
           </TouchableOpacity>
 

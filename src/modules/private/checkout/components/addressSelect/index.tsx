@@ -8,11 +8,16 @@ import Typography from "@/shared/components/typography";
 import { Button } from "@/shared/components/buttons";
 import { normalize } from "@/shared/helpers";
 import Icon from "@/shared/components/icon";
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 export default function AddressSelect() {
   const [openModal, setOpenModal] = useState(false)
   const [addressSelected, setAddressSelected] = useState<OptionCardOptions>();
-
+  const {isDarkMode} = useDarkMode()
+  const stylesIcon = {
+    tintColor: isDarkMode ? semantic.background.white.w500 : semantic.text.grey
+  }
   function onSelectAddress(option: OptionCardOptions) {
     setAddressSelected(option)
   }
@@ -40,7 +45,7 @@ export default function AddressSelect() {
       <ButtonSheet dispatch={openModal}>
         <View style={{padding: normalize(24)}}>
           <TouchableOpacity onPress={toggleModal} style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Icon icon={arrowBack} />
+            <Icon customStyles={stylesIcon} icon={arrowBack} />
             <Typography style={{fontWeight: '700', fontSize: normalize(24), marginLeft: normalize(10)}}>{"general.address"}</Typography>
           </TouchableOpacity>
 
