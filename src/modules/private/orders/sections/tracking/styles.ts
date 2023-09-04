@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 import { normalize } from "@/shared/helpers";
 import { palette, semantic } from "@/shared/constants/colors";
 
-export const styles = StyleSheet.create({
+export const _styles = (isDarkMode: boolean) => StyleSheet.create({
   card: {
     borderRadius: normalize(16),
     borderWidth: 2,
-    borderColor: semantic.fill.f04,
+    borderColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     paddingVertical: normalize(24),
     paddingHorizontal: normalize(12),
     marginVertical: normalize(32)
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   },
   containerIcon: {
     padding: normalize(16),
-    backgroundColor: semantic.fill.f04,
+    backgroundColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
     borderRadius: normalize(16)
   },
   containerInfo: {

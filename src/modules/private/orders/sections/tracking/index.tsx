@@ -5,11 +5,13 @@ import HeaderWithIcon from "@/shared/components/headerBack";
 import Icon from "@/shared/components/icon";
 import Typography from "@/shared/components/typography";
 import { normalize } from "@/shared/helpers";
-import {styles} from './styles'
+import {_styles} from './styles'
 import { check, chevronLeft, packageIcon, truck, truckInTracking } from "@/shared/assets/icons";
+import useDarkMode from "@/shared/hooks/useDarkMode";
 
 export default function Tracking() {
-
+  const {isDarkMode} = useDarkMode()
+  const styles = _styles(isDarkMode)
   return (
     <Wrapper>
       <View style={{paddingHorizontal: normalize(24)}}>
