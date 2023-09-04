@@ -30,6 +30,7 @@ import ListOptionCard, {
   OptionCardOptions,
 } from '@/shared/components/ListOptionCard';
 import {Button} from '@/shared/components/buttons';
+import useDarkMode from "@/shared/hooks/useDarkMode";
 
 const Profile = () => {
   const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(false);
@@ -37,6 +38,7 @@ const Profile = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [addressSelected, setAddressSelected] = useState<OptionCardOptions>();
+  const {isDarkMode,changeColorScheme} = useDarkMode()
 
   function onSelectAddress(option: OptionCardOptions) {
     setAddressSelected(option);
@@ -112,7 +114,9 @@ const Profile = () => {
             },
             {
               name: 'profile.payment_method',
-              leftIcon: <Icon icon={walletFilled} />,
+              leftIcon: <Icon
+                icon={walletFilled}
+              />,
               onPress: () => navigate('payments'),
             },
             {
@@ -120,8 +124,11 @@ const Profile = () => {
               leftIcon: <Icon icon={eyeFilled} />,
               rightElement: (
                 <Toggle
-                  isEnabled={toggleDarkMode}
-                  setIsEnabled={setToggleDarkMode}
+                  isEnabled={toggleDarkMode || isDarkMode}
+                  setIsEnabled={(newValue) => {
+                    setToggleDarkMode(newValue)
+                    changeColorScheme().catch()
+                  }}
                 />
               ),
             },

@@ -5,6 +5,8 @@ import Icon from '@/shared/components/icon';
 import {chevronLeft} from '@/shared/assets/icons';
 import {normalize} from '@/shared/helpers';
 import {styles} from './styles';
+import useDarkMode from "@/shared/hooks/useDarkMode";
+import { semantic } from "@/shared/constants/colors";
 
 interface Element {
   name: string;
@@ -19,6 +21,10 @@ interface SectionProps {
 }
 
 const Section: FC<SectionProps> = ({title, elements}) => {
+  const {isDarkMode} = useDarkMode()
+  const stylesIcon = {
+    tintColor: isDarkMode ? semantic.background.white.w500 : semantic.text.grey
+  }
   return (
     <View
       style={{
@@ -37,7 +43,7 @@ const Section: FC<SectionProps> = ({title, elements}) => {
           {element.rightElement ? (
             element.rightElement
           ) : (
-            <Icon icon={chevronLeft} />
+            <Icon customStyles={stylesIcon} icon={chevronLeft} />
           )}
         </TouchableOpacity>
       ))}
