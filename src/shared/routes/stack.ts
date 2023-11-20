@@ -23,12 +23,14 @@ import Tracking from '@/modules/private/orders/sections/tracking';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
 import NewAddress from '@/modules/private/profile/sections/newAddress';
-import Language from "@/modules/private/profile/sections/language";
-import Conversation from "@/modules/private/conversation";
-import Chats from "@/modules/private/chats";
+import Language from '@/modules/private/profile/sections/language';
+import Conversation from '@/modules/private/conversation';
+import Chats from '@/modules/private/chats';
+import Orders from '@/modules/private/orders';
 
 export type RootStackParamList = {
   login: undefined;
+  orders: undefined;
   createAccount: undefined;
   enterOtp: undefined;
   enterNewPassword: undefined;
@@ -68,6 +70,11 @@ const RoutesStack: RouteItem[] = [
     path: 'login',
     component: Login,
     private: false,
+  },
+  {
+    path: 'orders',
+    component: Orders,
+    private: true,
   },
   {
     path: 'createAccount',
