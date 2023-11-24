@@ -49,7 +49,8 @@
     "progress": "On Progress",
     "success": "Success",
     "canceled": "Canceled",
-    "track_order": "Track Order"
+    "track_order": "Track Order",
+    "completed": "Set to dispached"
   },
   "tracking": {
     "title": "Tracking",

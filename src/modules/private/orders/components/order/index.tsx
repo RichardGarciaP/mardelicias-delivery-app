@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {Alert, Image, TouchableOpacity, View} from 'react-native';
 import Typography from '@/shared/components/typography';
 import Icon from '@/shared/components/icon';
 import {calendarDate, trash} from '@/shared/assets/icons';
@@ -51,9 +51,9 @@ export default function Order({product, track = true}: OrderProps) {
             {track && (
               <View style={{flex: 1, maxWidth: 180}}>
                 <Button
-                  onPress={() => navigate('eReceipt')}
+                  onPress={() => Alert.alert('La orden ha sido entregada')}
                   sm
-                  title="orders.track_order"
+                  title="orders.completed"
                 />
               </View>
             )}

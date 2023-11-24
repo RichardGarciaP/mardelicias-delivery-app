@@ -49,7 +49,8 @@
     "progress": "En proceso",
     "success": "Completados",
     "canceled": "Cancelados",
-    "track_order": "Seguimiento"
+    "track_order": "Seguimiento",
+    "completed": "Marcar como entregada"
   },
   "tracking": {
     "title": "Seguimiento",
