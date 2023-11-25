@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {Pressable, TouchableOpacity, View} from 'react-native';
 import Icon from '@/shared/components/icon';
 import {arrowBack} from '@/shared/assets/icons';
 import Typography from '@/shared/components/typography';
@@ -20,7 +20,9 @@ export default function HeaderWithIcon({title, icon}: HeaderBackProps) {
   };
   return (
     <View style={styles.container}>
-      <Icon customStyles={stylesIcon} icon={icon ? icon : arrowBack} />
+      <Pressable onPress={goBack}>
+        <Icon customStyles={stylesIcon} icon={icon ? icon : arrowBack} />
+      </Pressable>
 
       {title && <Typography style={styles.title}>{title}</Typography>}
     </View>

@@ -46,9 +46,9 @@
   },
   "orders": {
     "title": "Ordenes",
-    "progress": "En proceso",
+    "news": "Nuevas",
+    "progress":"En Progreso",
     "success": "Completados",
-    "canceled": "Cancelados",
     "track_order": "Seguimiento",
     "completed": "Marcar como entregada"
   },

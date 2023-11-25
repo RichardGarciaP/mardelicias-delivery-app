@@ -1,4 +1,3 @@
-import Home from '@/modules/private/home';
 import {
   home as HomeIcon,
   user as UserIcon,
@@ -8,13 +7,6 @@ import Profile from '@/modules/private/profile';
 import Orders from '@/modules/private/orders';
 
 export default [
-  {
-    id: '1',
-    displayName: 'general.home',
-    name: 'homeTab',
-    icon: HomeIcon,
-    component: Home,
-  },
   {
     id: '3',
     displayName: 'general.chat',

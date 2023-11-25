@@ -1,12 +1,15 @@
-import React, { LegacyRef, useState } from "react";
+import React, {LegacyRef, useState} from 'react';
 import {View, TextInput} from 'react-native';
 import {_styles} from './styles';
 import Typography from '@/shared/components/typography';
 import {semantic} from '@/shared/constants/colors';
 import {KeyboardTypeOptions} from 'react-native/Libraries/Components/TextInput/TextInput';
-import { useTranslation } from "react-i18next";
-import { NativeSyntheticEvent, NativeTouchEvent } from "react-native/Libraries/Types/CoreEventTypes";
-import useDarkMode from "@/shared/hooks/useDarkMode";
+import {useTranslation} from 'react-i18next';
+import {
+  NativeSyntheticEvent,
+  NativeTouchEvent,
+} from 'react-native/Libraries/Types/CoreEventTypes';
+import useDarkMode from '@/shared/hooks/useDarkMode';
 
 interface InputProps {
   value?: string | undefined;
@@ -21,7 +24,7 @@ interface InputProps {
   rightIcon?: React.ReactNode | undefined;
   label?: string | undefined;
   onPressIn?: ((e: NativeSyntheticEvent<NativeTouchEvent>) => void) | undefined;
-  inputRef?: any
+  inputRef?: any;
 }
 
 export default function Input({
@@ -31,7 +34,7 @@ export default function Input({
   maxLength,
   keyboardType,
   editable,
-  placeholder = 'dev@soadtech.io',
+  placeholder = 'test@gmail.com',
   secureTextEntry,
   leftIcon,
   rightIcon,
@@ -40,7 +43,7 @@ export default function Input({
   inputRef,
 }: InputProps) {
   const [isFocus, setFocus] = useState(false);
-  const {isDarkMode} = useDarkMode()
+  const {isDarkMode} = useDarkMode();
   const styles = _styles(isFocus, isDarkMode);
   const {t} = useTranslation();
   return (

@@ -3,31 +3,39 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import Typography from '@/shared/components/typography';
 import {styles} from './styles';
 import Icon from '@/shared/components/icon';
-import {
-  location,
-  homeNotifications,
-  homeLike,
-  homeNotificationsDark,
-  homeLikeDark,
-  logout,
-} from '@/shared/assets/icons';
+import {location, logout} from '@/shared/assets/icons';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProps} from '@/shared/routes/stack';
 import useDarkMode from '@/shared/hooks/useDarkMode';
+import {useSession, useUser} from '@supabase/auth-helpers-react';
+import {signOut} from '@/shared/services/login/login';
+import {storage} from '@/shared/helpers';
 
 export default function Header() {
   const {isDarkMode} = useDarkMode();
   const {navigate} = useNavigation<NavigationProps>();
+  const session = useSession();
+
+  const closeSession = async () => {
+    await signOut();
+    storage.delete('user');
+    storage.delete('session');
+    navigate('login');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <Image
           style={styles.avatar}
-          source={{uri: 'https://i.ibb.co/hZqwx78/049-girl-25.png'}}
+          source={{
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png',
+          }}
         />
         <View>
           <Typography style={styles.nameUser} translate={false}>
-            Fernando
+            {session?.user?.user_metadata?.first_name}{' '}
+            {session?.user?.user_metadata?.last_name}
           </Typography>
           <View style={styles.row}>
             <Icon customStyles={styles.iconLocation} icon={location} />
@@ -39,7 +47,7 @@ export default function Header() {
       </View>
 
       <View style={styles.row}>
-        <TouchableOpacity onPress={() => navigate('login')}>
+        <TouchableOpacity onPress={closeSession}>
           {isDarkMode ? (
             <Icon customStyles={styles.iconSize} icon={logout} />
           ) : (

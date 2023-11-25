@@ -46,9 +46,9 @@
   },
   "orders": {
     "title": "My Orders",
-    "progress": "On Progress",
-    "success": "Success",
-    "canceled": "Canceled",
+    "news": "News",
+    "progress":"On Progress",
+    "success": "Completed",
     "track_order": "Track Order",
     "completed": "Set to dispached"
   },

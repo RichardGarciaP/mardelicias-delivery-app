@@ -10,27 +10,8 @@ import Orders from '@/modules/private/orders';
 export type RootStackParamList = {
   login: undefined;
   orders: undefined;
-  createAccount: undefined;
-  enterOtp: undefined;
-  enterNewPassword: undefined;
-  forgotPassword: undefined;
-  welcome: undefined;
-  detailPlant: undefined;
-  plantList: undefined;
-  favorites: undefined;
-  notifications: undefined;
-  reviews: undefined;
-  checkout: undefined;
   editProfile: undefined;
-  vouchers: undefined;
-  tracking: undefined;
   eReceipt: undefined;
-  payments: undefined;
-  newPayment: undefined;
-  addNewAddress: undefined;
-  language: undefined;
-  conversation: undefined;
-  chats: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
