@@ -6,38 +6,24 @@ import {useEffect, useState} from 'react';
 import {PostgrestError} from '@supabase/supabase-js';
 
 interface UserOrderProps {
+  data: Order[] | null | undefined;
   isLoading: boolean;
-  data?: Order[];
+  isValidating: boolean;
   error: PostgrestError | null;
 }
 
 const useOrders = (status: string): UserOrderProps => {
   const ENTITY = 'orders';
   const user = useUser();
-  const [state, setState] = useState<UserOrderProps>({
-    isLoading: true,
-    data: undefined,
-    error: null,
-  });
 
-  const fetchOrders = async () => {
-    const ordersPromise = getOrders(status, user!.id);
+  const response = useSWR(user?.id ? `/${ENTITY}` : null, () =>
+    getOrders(status, user!.id),
+  );
 
-    const [ordersResult] = await Promise.all([ordersPromise]);
-    setState({
-      isLoading: false,
-      data: ordersResult?.data ?? [],
-      error: ordersResult.error,
-    });
+  return {
+    ...response,
+    data: response.data?.data?.filter(order => order.status === status),
   };
-
-  useEffect(() => {
-    setState({...state, isLoading: true});
-    fetchOrders();
-    mutate(`/${ENTITY}`);
-  }, [status]);
-
-  return {...state};
 };
 
 export default useOrders;

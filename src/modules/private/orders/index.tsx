@@ -12,36 +12,26 @@ import Header from '@/shared/components/header';
 import OrderList from './sections/orderList';
 import useOrders from '@/shared/hooks/useOrders';
 import {TAB_LIST} from '@/shared/constants/global';
+import useEffectOnce from '@/shared/hooks/useEffectOnce';
+import {mutate} from 'swr';
 
 export default function Orders() {
   const [currentTab, setCurrentTab] = useState<string>(TAB_LIST[0].id);
-  const {data, error, isLoading} = useOrders(
+  const {data, error, isLoading, isValidating} = useOrders(
     currentTab ? currentTab : TAB_LIST[0].id,
   );
 
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const onRefresh = () => {
-    setIsRefreshing(true);
-    setLoading(true);
-    setTimeout(() => {
-      console.log('Terminamos');
-      setIsRefreshing(false);
-      setLoading(false);
-    }, 1000);
-  };
 
   useEffect(() => {
-    console.log(currentTab);
+    mutate('/orders');
   }, [currentTab]);
 
   return (
     <Wrapper
       isScrollView
       refreshing={isRefreshing}
-      onRefresh={onRefresh}
-      loading={isLoading || loading}>
+      loading={isLoading || isValidating}>
       <View style={styles.headerContainer}>
         <Header />
       </View>

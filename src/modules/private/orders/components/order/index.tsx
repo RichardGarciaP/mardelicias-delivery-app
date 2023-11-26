@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, TouchableOpacity, View} from 'react-native';
+import {Alert, ToastAndroid, TouchableOpacity, View} from 'react-native';
 import Typography from '@/shared/components/typography';
 import Icon from '@/shared/components/icon';
 import {calendarDate, location, trash} from '@/shared/assets/icons';
@@ -16,6 +16,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NavigationProps} from '@/shared/routes/stack';
 import {format} from 'date-fns';
 import openMap from 'react-native-open-maps';
+import {updateOrder} from '@/shared/services/orders/orders';
+import {mutate} from 'swr';
 
 interface OrderProps {
   order: OrderDTOP;
@@ -35,6 +37,27 @@ export default function Order({order, track = true, map = false}: OrderProps) {
 
   const openLocation = (latitude: number, longitude: number) =>
     openMap({latitude, longitude, navigate: true});
+
+  const setToCompleted = async () => {
+    Alert.alert('Advertencia', '¿Desea marcar esta orden como entregada?', [
+      {text: 'Cancelar', onPress: async () => {}, style: 'cancel'},
+      {
+        text: 'Ok',
+        onPress: async () => {
+          await updateOrder({
+            ...order,
+            status: ORDER_STATUS_DEFINITIONS.DELIVERED,
+          });
+          mutate('/orders');
+          operationIsSuccess();
+        },
+      },
+    ]);
+  };
+
+  const operationIsSuccess = () => {
+    ToastAndroid.show('La orden ha sido entregada!', ToastAndroid.SHORT);
+  };
 
   return (
     <View>
@@ -58,7 +81,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
             </Typography>
           </View>
           <Typography style={styles.category} translate={false}>
-            Cliente: {`${order.users.first_name} ${order.users.last_name}`}
+            Cliente: {`${order?.users?.first_name} ${order?.users?.last_name}`}
           </Typography>
           <Typography style={styles.category} translate={false}>
             Cantidad de Productos: {qty}
@@ -71,11 +94,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
             <View style={{width: 20}} />
             {track && order.status === ORDER_STATUS_DEFINITIONS.DISPATCH && (
               <View style={{flex: 1, maxWidth: 160}}>
-                <Button
-                  onPress={() => Alert.alert('La orden ha sido entregada')}
-                  sm
-                  title="orders.completed"
-                />
+                <Button onPress={setToCompleted} sm title="orders.completed" />
               </View>
             )}
             {location && !track && (
