@@ -146,7 +146,7 @@ export interface Order {
   voucher_url: string;
   status: string;
   driver_user: string;
-  users: Client;
+  users?: Client;
 }
 
 export interface Product {

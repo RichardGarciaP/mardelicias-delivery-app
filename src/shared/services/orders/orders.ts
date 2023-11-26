@@ -23,3 +23,8 @@ export const getOrder = async (
       '*, users!orders_user_id_fkey (first_name, last_name, direction, direction_detail)',
     )
     .eq('id', id);
+
+export const updateOrder = async (data: Order) => {
+  delete data.users;
+  return await supabase.from(ENTITY_NAME).update(data).eq('id', data?.id);
+};

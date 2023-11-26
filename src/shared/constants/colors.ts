@@ -1,11 +1,11 @@
 export const palette = {
   main: {
-    p500: '#41644A',
-    p400: '#67836E',
-    p300: '#8DA292',
-    p200: '#B3C1B7',
-    p100: '#ECF0ED'
-  }
+    p500: '#164863',
+    p400: '#427D9D',
+    p300: '#9BBEC8',
+    p200: '#DDF2FD',
+    p100: '#ECF0ED',
+  },
 };
 
 export const semantic = {
@@ -18,7 +18,7 @@ export const semantic = {
     f01: '#181818',
     f02: '#1D1C1E',
     f03: '#FFFFFF',
-    f04: '#f7f7f7'
+    f04: '#f7f7f7',
   },
   alert: {
     info: {
@@ -26,28 +26,28 @@ export const semantic = {
       i400: '#33A6E6',
       i300: '#66BCEC',
       i200: '#CCE9F9',
-      i100: '#E6F4FC'
+      i100: '#E6F4FC',
     },
     success: {
       s500: '#34C240',
       s400: '#5dce66',
       s300: '#85DA8C',
       s200: '#AEE7B3',
-      s100: '#EBF9EC'
+      s100: '#EBF9EC',
     },
     warning: {
       w500: '#FA9F47',
       w400: '#FBB26C',
       w300: '#FCC591',
       w200: '#FDD9B5',
-      w100: '#FFF5ED'
+      w100: '#FFF5ED',
     },
     danger: {
       d500: '#D64242',
       d400: '#DE6868',
       d300: '#E68E8E',
       d200: '#F7D9D9',
-      d100: '#FBECEC'
+      d100: '#FBECEC',
     },
   },
   background: {
@@ -64,6 +64,6 @@ export const semantic = {
       w300: '#fcfcfc',
       w200: '#fdfdfd',
       w100: '#fefefe',
-    }
+    },
   },
 };

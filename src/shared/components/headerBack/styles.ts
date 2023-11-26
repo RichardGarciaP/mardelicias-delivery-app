@@ -9,6 +9,9 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: normalize(22),
     fontWeight: '700',
-    marginLeft: normalize(6),
+    marginLeft: normalize(20),
+  },
+  arrowBack: {
+    padding: normalize(10),
   },
 });

@@ -45,7 +45,7 @@ export default function EReceipt({route}: Props) {
             paddingHorizontal: normalize(24),
             marginBottom: normalize(20),
           }}>
-          <HeaderWithIcon title="E-Receipt" />
+          <HeaderWithIcon title="E-Receipt" enablePressable />
           <Order track={false} map={true} order={order} />
           <View style={styles.containerSection}>
             <View style={styles.innerSectionMb}>

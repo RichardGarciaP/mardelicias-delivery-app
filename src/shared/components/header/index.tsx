@@ -40,7 +40,7 @@ export default function Header() {
           <View style={styles.row}>
             <Icon customStyles={styles.iconLocation} icon={location} />
             <Typography style={styles.location} translate={false}>
-              San francisco
+              {session?.user?.user_metadata?.city}
             </Typography>
           </View>
         </View>
