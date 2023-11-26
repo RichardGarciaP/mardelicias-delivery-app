@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { semantic } from "@/shared/constants/colors";
+import {semantic} from '@/shared/constants/colors';
 
 export const _styles = (height: number, loading: boolean | undefined) =>
   StyleSheet.create({
@@ -16,7 +16,7 @@ export const _styles = (height: number, loading: boolean | undefined) =>
       opacity: loading ? 1 : 0,
     },
     text: {
-      color: semantic.text.default,
+      color: semantic.text.black,
       fontSize: 20,
       fontWeight: 'bold',
       textAlign: 'center',

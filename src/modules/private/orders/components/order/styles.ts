@@ -21,7 +21,6 @@ export const _styles = (isDarkMode: boolean) =>
       borderWidth: 1,
       borderColor: isDarkMode ? semantic.fill.f01 : semantic.fill.f04,
       padding: normalize(8),
-      paddingLeft: 0,
       marginTop: normalize(24),
       marginBottom: normalize(22),
     },

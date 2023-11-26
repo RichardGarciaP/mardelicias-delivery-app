@@ -50,7 +50,8 @@
     "progress":"On Progress",
     "success": "Completed",
     "track_order": "Track Order",
-    "completed": "Set to dispached"
+    "completed": "Set to dispached",
+    "locate":"See location"
   },
   "tracking": {
     "title": "Tracking",

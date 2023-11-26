@@ -50,7 +50,8 @@
     "progress":"En Progreso",
     "success": "Completados",
     "track_order": "Seguimiento",
-    "completed": "Marcar como entregada"
+    "completed": "Marcar como entregada",
+    "locate":"Ver Ubicación"
   },
   "tracking": {
     "title": "Seguimiento",

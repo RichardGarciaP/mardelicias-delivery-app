@@ -7,3 +7,26 @@ export const ORDER_STATUS_DEFINITIONS = {
   DISPATCH: 'enviado',
   DELIVERED: 'entregado',
 };
+
+export const PAYMENT_METHODS = {
+  CASH: 'Efectivo',
+  TRANSFER: 'Transferencia',
+};
+
+export const TAB_LIST = [
+  {
+    id: ORDER_STATUS_DEFINITIONS.PREPARING,
+    name: 'orders.news',
+    active: true,
+  },
+  {
+    id: ORDER_STATUS_DEFINITIONS.DISPATCH,
+    name: 'orders.progress',
+    active: false,
+  },
+  {
+    id: ORDER_STATUS_DEFINITIONS.DELIVERED,
+    name: 'orders.success',
+    active: false,
+  },
+];

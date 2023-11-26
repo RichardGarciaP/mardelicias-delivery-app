@@ -22,7 +22,6 @@ export interface ProductDTO {
   category: string;
   description?: string;
   discount?: string;
-  image: string;
   name: string;
   price: number;
   state?: string;
@@ -62,20 +61,6 @@ export interface AddressDTO {
   email: string;
   nickname: string;
   address: string;
-}
-
-export interface OrderDTO {
-  id: string;
-  address: AddressDTO;
-  typeDelivery: string;
-  deliveryOptions: string;
-  state: number;
-  clientName: string;
-  clientEmail: string;
-  clientPhone: string;
-  products: ProductDTO[];
-  paymentMethods: string;
-  order: number;
 }
 
 export interface NotificationDTO {
@@ -149,4 +134,35 @@ export interface UserMetadata {
   first_name: string;
   last_name: string;
   role: string;
+}
+
+export interface Order {
+  id: number;
+  created_at: Date;
+  products: Product[];
+  user_id: string;
+  payment_method: string;
+  total: number;
+  voucher_url: string;
+  status: string;
+  driver_user: string;
+  users: Client;
+}
+
+export interface Product {
+  id: number;
+  qty: number;
+  name: string;
+  price: string;
+  stock: number;
+  imageUrl: string;
+  created_at: Date;
+  description: string;
+}
+
+export interface Client {
+  first_name: string;
+  last_name: string;
+  direction: string;
+  direction_detail: string;
 }

@@ -6,12 +6,14 @@ import EditProfile from '@/modules/private/profile/sections/editProfile';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
 import Orders from '@/modules/private/orders';
+import Location from '@/modules/private/location';
 
 export type RootStackParamList = {
   login: undefined;
   orders: undefined;
   editProfile: undefined;
-  eReceipt: undefined;
+  eReceipt: {id: number};
+  location: undefined;
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
@@ -44,6 +46,11 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'eReceipt',
     component: EReceipt,
+    private: true,
+  },
+  {
+    path: 'location',
+    component: Location,
     private: true,
   },
 ];

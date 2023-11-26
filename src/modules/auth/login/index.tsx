@@ -64,7 +64,7 @@ export default function Login({session}: {session: Session}) {
   };
 
   useEffectOnce(() => {
-    validateUserIsLogged();
+    // validateUserIsLogged();
   }, []);
 
   return (
@@ -73,8 +73,8 @@ export default function Login({session}: {session: Session}) {
         <TitleAuth title={'auth.login.title'} />
         <Formik
           initialValues={{
-            email: '',
-            password: '',
+            email: 'ruben@gmail.com',
+            password: 'qwerty00',
             submit: '',
           }}
           validationSchema={validations}

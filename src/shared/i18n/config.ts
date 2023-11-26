@@ -16,7 +16,7 @@ i18n.use(initReactI18next).init({
   returnNull: false,
   resources,
   //language to use if translations in user language are not available
-  fallbackLng: 'en', // es - en
+  fallbackLng: 'es', // es - en
   interpolation: {
     escapeValue: false, // not needed for react!!
   },

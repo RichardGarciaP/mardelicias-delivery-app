@@ -4,6 +4,7 @@ import {_styles} from './styles';
 import Typography from '@/shared/components/typography';
 import {
   ORDER_STATUS_DEFINITIONS,
+  TAB_LIST,
   activeOpacity,
 } from '@/shared/constants/global';
 import useDarkMode from '@/shared/hooks/useDarkMode';
@@ -15,33 +16,13 @@ export interface TopNavigationProps {
 }
 
 interface Props {
-  setCurrentTab: (currentTab: TopNavigationProps) => void;
+  setCurrentTab: (currentTab: string) => void;
 }
 
 const TopNavigation: React.FC<Props> = ({setCurrentTab}) => {
-  const [tabs, setTabs] = useState<TopNavigationProps[]>([
-    {
-      id: ORDER_STATUS_DEFINITIONS.PREPARING,
-      name: 'orders.news',
-      active: true,
-    },
-    {
-      id: ORDER_STATUS_DEFINITIONS.DISPATCH,
-      name: 'orders.progress',
-      active: false,
-    },
-    {
-      id: ORDER_STATUS_DEFINITIONS.DELIVERED,
-      name: 'orders.success',
-      active: false,
-    },
-  ]);
+  const [tabs, setTabs] = useState<TopNavigationProps[]>(TAB_LIST);
 
   const {isDarkMode} = useDarkMode();
-
-  useEffect(() => {
-    setCurrentTab(tabs.find(tab => tab.active) ?? tabs[0]);
-  }, []);
 
   const handleChange = (tabSelected: TopNavigationProps) => {
     setTabs(
@@ -51,7 +32,7 @@ const TopNavigation: React.FC<Props> = ({setCurrentTab}) => {
       })),
     );
 
-    setCurrentTab(tabSelected);
+    setCurrentTab(tabSelected.id);
   };
 
   const styles = _styles(isDarkMode);
