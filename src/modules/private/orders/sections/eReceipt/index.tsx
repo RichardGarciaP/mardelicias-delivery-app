@@ -23,7 +23,10 @@ interface Props extends StackScreenProps<RootStackParamList, 'eReceipt'> {}
 export default function EReceipt({route}: Props) {
   const {data, isLoading} = useOrderDetails(route.params.id);
   const {width, height} = useWindowDimensions();
+  const modalWidth = width - 40;
+  const modalHeight = height - 250;
   const [isOpenImage, setIsOpenImage] = useState(false);
+
   const toggleImageModal = () => {
     setIsOpenImage(!isOpenImage);
   };
@@ -37,7 +40,11 @@ export default function EReceipt({route}: Props) {
   return (
     <>
       <Wrapper loading={isLoading}>
-        <View style={{paddingHorizontal: normalize(24)}}>
+        <View
+          style={{
+            paddingHorizontal: normalize(24),
+            marginBottom: normalize(20),
+          }}>
           <HeaderWithIcon title="E-Receipt" />
           <Order track={false} map={true} order={order} />
           <View style={styles.containerSection}>
@@ -129,7 +136,12 @@ export default function EReceipt({route}: Props) {
           visible={isOpenImage}
           onRequestClose={toggleImageModal}>
           <View style={styles.centeredView}>
-            <View style={styles.modalView}>
+            <View
+              style={{
+                ...styles.modalView,
+                width: normalize(modalWidth),
+                height: normalize(modalHeight),
+              }}>
               <Pressable style={styles.closeIcon} onPress={toggleImageModal}>
                 <Icon
                   customStyles={{
@@ -142,8 +154,8 @@ export default function EReceipt({route}: Props) {
               </Pressable>
               <Image
                 style={{
-                  width: normalize(width - 100),
-                  height: normalize(height - 450),
+                  width: normalize(modalWidth - 20),
+                  height: normalize(modalHeight - 60),
                 }}
                 source={{uri: order.voucher_url}}
               />

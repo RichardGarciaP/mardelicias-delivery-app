@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
   modalView: {
     margin: 20,
     borderRadius: normalize(20),
-    paddingHorizontal: normalize(10),
+    paddingHorizontal: normalize(20),
     paddingVertical: normalize(40),
     alignItems: 'center',
     shadowColor: '#000',
