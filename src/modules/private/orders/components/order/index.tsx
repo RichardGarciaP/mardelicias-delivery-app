@@ -4,13 +4,18 @@ import Typography from '@/shared/components/typography';
 import Icon from '@/shared/components/icon';
 import {calendarDate, location, trash} from '@/shared/assets/icons';
 import {_styles} from './styles';
-import {activeOpacity, currencyType} from '@/shared/constants/global';
+import {
+  ORDER_STATUS_DEFINITIONS,
+  activeOpacity,
+  currencyType,
+} from '@/shared/constants/global';
 import useDarkMode from '@/shared/hooks/useDarkMode';
 import {Order as OrderDTOP} from '@/shared/DTO';
 import {Button} from '@/shared/components/buttons';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProps} from '@/shared/routes/stack';
 import {format} from 'date-fns';
+import openMap from 'react-native-open-maps';
 
 interface OrderProps {
   order: OrderDTOP;
@@ -27,6 +32,9 @@ export default function Order({order, track = true, map = false}: OrderProps) {
   useEffect(() => {
     setQty(order.products.reduce((total, product) => total + product.qty, 0));
   }, [order]);
+
+  const openLocation = (latitude: number, longitude: number) =>
+    openMap({latitude, longitude, navigate: true});
 
   return (
     <View>
@@ -61,7 +69,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
               {currencyType} {order.total.toFixed(2)}
             </Typography>
             <View style={{width: 20}} />
-            {track && (
+            {track && order.status === ORDER_STATUS_DEFINITIONS.DISPATCH && (
               <View style={{flex: 1, maxWidth: 180}}>
                 <Button
                   onPress={() => Alert.alert('La orden ha sido entregada')}
@@ -73,7 +81,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
             {location && !track && (
               <View style={{flex: 1, maxWidth: 180}}>
                 <Button
-                  onPress={() => navigate('location')}
+                  onPress={() => openLocation(37.865101, -119.53833)}
                   sm
                   title="orders.locate"
                 />

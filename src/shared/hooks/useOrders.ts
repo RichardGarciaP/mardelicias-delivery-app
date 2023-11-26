@@ -1,29 +1,43 @@
-import useSWR from 'swr';
+import useSWR, {mutate} from 'swr';
 import {getOrders} from '../services/orders/orders';
 import {useUser} from '@supabase/auth-helpers-react';
 import {Order} from '../DTO';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+import {PostgrestError} from '@supabase/supabase-js';
 
 interface UserOrderProps {
-  data: Order[] | null | undefined;
   isLoading: boolean;
-  error: any;
+  data?: Order[];
+  error: PostgrestError | null;
 }
 
 const useOrders = (status: string): UserOrderProps => {
   const ENTITY = 'orders';
   const user = useUser();
+  const [state, setState] = useState<UserOrderProps>({
+    isLoading: true,
+    data: undefined,
+    error: null,
+  });
 
-  const response = useSWR(user?.id ? `/${ENTITY}` : null, () =>
-    getOrders(status, user!.id),
-  );
+  const fetchOrders = async () => {
+    const ordersPromise = getOrders(status, user!.id);
 
-  useEffect(() => {}, []);
-
-  return {
-    ...response,
-    data: response.data?.data,
+    const [ordersResult] = await Promise.all([ordersPromise]);
+    setState({
+      isLoading: false,
+      data: ordersResult?.data ?? [],
+      error: ordersResult.error,
+    });
   };
+
+  useEffect(() => {
+    setState({...state, isLoading: true});
+    fetchOrders();
+    mutate(`/${ENTITY}`);
+  }, [status]);
+
+  return {...state};
 };
 
 export default useOrders;

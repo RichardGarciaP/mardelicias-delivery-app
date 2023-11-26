@@ -1,13 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Wrapper from '@/shared/components/wrapper';
-import {
-  Dimensions,
-  Image,
-  Modal,
-  Pressable,
-  View,
-  useWindowDimensions,
-} from 'react-native';
+import {Image, Modal, Pressable, View, useWindowDimensions} from 'react-native';
 import HeaderWithIcon from '@/shared/components/headerBack';
 import Order from '@/modules/private/orders/components/order';
 import Typography from '@/shared/components/typography';
@@ -36,6 +29,7 @@ export default function EReceipt({route}: Props) {
   };
 
   if (!data) return null;
+
   const order = data[0];
   const isTransfer =
     order.payment_method === PAYMENT_METHODS.TRANSFER && order.voucher_url;
@@ -110,7 +104,9 @@ export default function EReceipt({route}: Props) {
           <View style={styles.containerSection}>
             <Text style={styles.paymentMethod}>Productos</Text>
             {order.products.map(product => (
-              <View style={styles.productsSection}>
+              <View
+                style={styles.productsSection}
+                key={`product-${product.id}`}>
                 <Typography style={styles.innerTitleSection}>
                   {product.name}
                 </Typography>
