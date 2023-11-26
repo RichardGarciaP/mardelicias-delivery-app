@@ -7,12 +7,10 @@ import TopNavigation, {
 } from '@/modules/private/orders/components/topNavigation';
 import {View} from 'react-native';
 import {styles} from './styles';
-import Order from '@/modules/private/orders/components/order';
 import Header from '@/shared/components/header';
 import OrderList from './sections/orderList';
 import useOrders from '@/shared/hooks/useOrders';
 import {TAB_LIST} from '@/shared/constants/global';
-import useEffectOnce from '@/shared/hooks/useEffectOnce';
 import {mutate} from 'swr';
 
 export default function Orders() {
@@ -21,8 +19,6 @@ export default function Orders() {
     currentTab ? currentTab : TAB_LIST[0].id,
   );
 
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
   useEffect(() => {
     mutate('/orders');
   }, [currentTab]);
@@ -30,7 +26,7 @@ export default function Orders() {
   return (
     <Wrapper
       isScrollView
-      refreshing={isRefreshing}
+      refreshing={isValidating}
       loading={isLoading || isValidating}>
       <View style={styles.headerContainer}>
         <Header />
