@@ -2,7 +2,6 @@ import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import Login from '@/modules/auth/login';
-import EditProfile from '@/modules/private/profile/sections/editProfile';
 import EReceipt from '@/modules/private/orders/sections/eReceipt';
 
 import Orders from '@/modules/private/orders';
@@ -36,11 +35,6 @@ const RoutesStack: RouteItem[] = [
   {
     path: 'orders',
     component: Orders,
-    private: true,
-  },
-  {
-    path: 'editProfile',
-    component: EditProfile,
     private: true,
   },
   {

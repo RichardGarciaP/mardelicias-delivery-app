@@ -1,14 +1,15 @@
 import HeaderWithIcon from '@/shared/components/headerBack';
 import Wrapper from '@/shared/components/wrapper';
+import {normalize} from '@/shared/helpers';
 import React from 'react';
-import {Text} from 'react-native';
+import {View} from 'react-native';
 
 const Location = () => {
   return (
     <Wrapper>
-      <HeaderWithIcon title="Ubicación" />
-
-      <Text>Location</Text>
+      <View style={{paddingHorizontal: normalize(24)}}>
+        <HeaderWithIcon title="Ubicación" />
+      </View>
     </Wrapper>
   );
 };
