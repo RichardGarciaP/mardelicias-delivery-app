@@ -96,7 +96,7 @@ export default function EReceipt({route}: Props) {
                 style={styles.valueInnerSection}
                 translate={
                   false
-                }>{`${order.users.first_name} ${order.users.last_name}`}</Typography>
+                }>{`${order?.users?.first_name} ${order?.users?.last_name}`}</Typography>
             </View>
 
             <View style={styles.innerSectionMb}>
@@ -104,12 +104,17 @@ export default function EReceipt({route}: Props) {
                 Dirección
               </Typography>
               <Typography style={styles.valueInnerSection} translate={false}>
-                {order.users.direction_detail}
+                {order?.users?.direction_detail}
               </Typography>
             </View>
           </View>
           <View style={styles.containerSection}>
-            <Text style={styles.paymentMethod}>Productos</Text>
+            <View style={styles.innerSectionMb}>
+              <Text style={styles.paymentMethod}>Productos</Text>
+              <Typography style={styles.valueInnerSection} translate={false}>
+                Cantidad
+              </Typography>
+            </View>
             {order.products.map(product => (
               <View
                 style={styles.productsSection}
