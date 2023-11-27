@@ -20,8 +20,6 @@ export default function Orders() {
     currentTab ? currentTab : TAB_LIST[0].id,
   );
 
-  console.log(require('@/shared/assets/icons/no-orders.png'));
-
   useEffect(() => {
     mutate('/orders');
   }, [currentTab]);
