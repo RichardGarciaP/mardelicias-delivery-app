@@ -15,13 +15,13 @@ export const PAYMENT_METHODS = {
 
 export const TAB_LIST = [
   {
-    id: ORDER_STATUS_DEFINITIONS.PREPARING,
-    name: 'orders.news',
+    id: ORDER_STATUS_DEFINITIONS.PROCESSING,
+    name: 'orders.processing',
     active: true,
   },
   {
     id: ORDER_STATUS_DEFINITIONS.DISPATCH,
-    name: 'orders.progress',
+    name: 'orders.sended',
     active: false,
   },
   {

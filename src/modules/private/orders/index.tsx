@@ -38,7 +38,7 @@ export default function Orders() {
         <TopNavigation setCurrentTab={setCurrentTab} />
 
         {currentTab && data && <OrderList orders={data} />}
-        {!isLoading && data?.length === 0 && (
+        {!isLoading && !isValidating && data?.length === 0 && (
           <Image
             source={require('@/shared/assets/icons/no-orders.png')}
             style={{width: Dimensions.get('screen').width - 20, height: 350}}

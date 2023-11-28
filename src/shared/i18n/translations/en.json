@@ -46,6 +46,7 @@
   },
   "orders": {
     "title": "My Orders",
+    "processing":"Processing",
     "news": "News",
     "progress":"On Progress",
     "success": "Completed",
