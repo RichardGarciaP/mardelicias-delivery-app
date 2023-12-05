@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import Wrapper from '@/shared/components/wrapper';
-import {Image, Modal, Pressable, View, useWindowDimensions} from 'react-native';
+import {
+  Image,
+  Linking,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import HeaderWithIcon from '@/shared/components/headerBack';
 import Order from '@/modules/private/orders/components/order';
 import Typography from '@/shared/components/typography';
@@ -13,8 +21,8 @@ import {StackScreenProps} from '@react-navigation/stack';
 import {RootStackParamList} from '@/shared/routes/stack';
 import useOrderDetails from '@/shared/hooks/useOrderDetails';
 import {format} from 'date-fns';
-import {close, vocher} from '@/shared/assets/icons';
-import {semantic} from '@/shared/constants/colors';
+import {close, phone, vocher} from '@/shared/assets/icons';
+import {palette, semantic} from '@/shared/constants/colors';
 import {Text} from 'react-native-elements';
 import {PAYMENT_METHODS} from '@/shared/constants/global';
 
@@ -36,6 +44,10 @@ export default function EReceipt({route}: Props) {
   const order = data[0];
   const isTransfer =
     order.payment_method === PAYMENT_METHODS.TRANSFER && order.voucher_url;
+
+  const makeCall = (phoneNumber: string) => {
+    Linking.openURL(`tel:${phoneNumber}`);
+  };
 
   return (
     <>
@@ -107,12 +119,38 @@ export default function EReceipt({route}: Props) {
                 {order?.users?.direction_detail}
               </Typography>
             </View>
+            <View style={styles.innerSectionMb}>
+              <Typography style={styles.innerTitleSection}>Celular</Typography>
+
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Typography style={styles.valueInnerSection} translate={false}>
+                  +593 {order?.users?.phone}
+                </Typography>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={{
+                    backgroundColor: palette.main.p500,
+                    width: 40,
+                    height: 30,
+                    marginLeft: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 10,
+                  }}
+                  onPress={() => makeCall(`+593${order?.users?.phone}`)}>
+                  <Icon
+                    icon={phone}
+                    customStyles={{tintColor: semantic.text.white}}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
           <View style={styles.containerSection}>
             <View style={styles.innerSectionMb}>
               <Text style={styles.paymentMethod}>Productos</Text>
               <Typography style={styles.valueInnerSection} translate={false}>
-                Cantidad
+                Precio
               </Typography>
             </View>
             {order.products.map(product => (
@@ -123,7 +161,7 @@ export default function EReceipt({route}: Props) {
                   {product.name}
                 </Typography>
                 <Typography style={styles.valueInnerSection} translate={false}>
-                  {product.qty}
+                  {`${product.price} (x${product.qty})`}
                 </Typography>
               </View>
             ))}

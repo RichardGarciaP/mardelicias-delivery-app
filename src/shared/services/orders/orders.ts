@@ -20,7 +20,7 @@ export const getOrder = async (
   await supabase
     .from(ENTITY_NAME)
     .select(
-      '*, users!orders_user_id_fkey (first_name, last_name, direction, direction_detail)',
+      '*, users!orders_user_id_fkey (first_name, last_name, direction, direction_detail, phone)',
     )
     .eq('id', id);
 

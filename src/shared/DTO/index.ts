@@ -165,4 +165,5 @@ export interface Client {
   last_name: string;
   direction: string;
   direction_detail: string;
+  phone: string;
 }

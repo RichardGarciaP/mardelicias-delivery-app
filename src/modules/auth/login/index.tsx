@@ -1,29 +1,25 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-
-import {Formik, FormikHelpers, FormikProps} from 'formik';
-import * as Yup from 'yup';
-
+import React from 'react';
+import {View, TouchableOpacity, Image, Text} from 'react-native';
 import {styles} from './styles';
 import TitleAuth from '@/shared/components/titleAuth';
 import Input from '@/shared/components/input';
 import Icon from '@/shared/components/icon';
 import {eyeFilled, eyeOff, lock, mail} from '@/shared/assets/icons';
 import {Button} from '@/shared/components/buttons';
-import Wrapper from '@/shared/components/wrapper';
+import Typography from '@/shared/components/typography';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProps} from '@/shared/routes/stack';
-import {SignInResponse, UserDTO} from '@/shared/DTO';
-import {signInWithEmail} from '@/shared/services/login/login';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import Typography from '@/shared/components/typography';
+import * as Yup from 'yup';
+import {Formik, FormikHelpers, FormikProps} from 'formik';
+import {UserDTO} from '@/shared/DTO';
 import {storage} from '@/shared/helpers';
-import useEffectOnce from '@/shared/hooks/useEffectOnce';
-import {Session, useSupabaseClient} from '@supabase/auth-helpers-react';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {signInWithEmail} from '@/shared/services/login/login';
 
-export default function Login({session}: {session: Session}) {
-  const [isSecureActive, setIsSecureActive] = useState(true);
+export default function Login() {
   const navigation = useNavigation<NavigationProps>();
+  const [isSecureActive, setIsSecureActive] = React.useState(true);
+
   const validations = Yup.object({
     email: Yup.string()
       .min(5, 'El correo debe tener más de 5 caracteres')
@@ -54,23 +50,18 @@ export default function Login({session}: {session: Session}) {
     setSubmitting(false);
     await storage.create('user', data.user);
     await storage.create('session', data.session);
-    navigation.navigate('orders');
+    navigation.push('orders');
   };
-
-  const validateUserIsLogged = async () => {
-    const user = await storage.get('user');
-    const session = await storage.get('session');
-    if (user && session) navigation.navigate('orders');
-  };
-
-  useEffectOnce(() => {
-    // validateUserIsLogged();
-  }, []);
 
   return (
-    <Wrapper>
-      <View style={styles.container}>
-        <TitleAuth title={'auth.login.title'} />
+    <View style={styles.wrapper}>
+      <View>
+        <View style={styles.imageWrapper}>
+          <Image
+            style={styles.logo}
+            source={require('@/shared/assets/icons/mardelicias.png')}
+          />
+        </View>
         <Formik
           initialValues={{
             email: 'ruben@gmail.com',
@@ -133,7 +124,7 @@ export default function Login({session}: {session: Session}) {
                   </Typography>
                 </View>
               )}
-              <View style={styles.formControl}>
+              <View>
                 <Button
                   title={'auth.sign_in'}
                   onPress={() => submitForm()}
@@ -144,6 +135,6 @@ export default function Login({session}: {session: Session}) {
           )}
         </Formik>
       </View>
-    </Wrapper>
+    </View>
   );
 }
