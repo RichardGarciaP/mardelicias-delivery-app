@@ -147,6 +147,8 @@ export interface Order {
   status: string;
   driver_user: string;
   users?: Client;
+  latitude: string;
+  longitude: string;
 }
 
 export interface Product {

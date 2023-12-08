@@ -34,7 +34,12 @@ export default function Order({order, track = true, map = false}: OrderProps) {
     setQty(order.products.reduce((total, product) => total + product.qty, 0));
   }, [order]);
 
-  const openLocation = (latitude: number, longitude: number) => {};
+  const openLocation = () => {
+    navigate('location', {
+      latitude: parseFloat(order.latitude),
+      longitude: parseFloat(order.longitude),
+    });
+  };
 
   const setToCompleted = async () => {
     Alert.alert('Advertencia', '¿Desea marcar esta orden como entregada?', [
@@ -98,7 +103,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
             {location && !track && (
               <View style={{flex: 1, maxWidth: 140}}>
                 <Button
-                  onPress={() => openLocation(37.865101, -119.53833)}
+                  onPress={() => openLocation()}
                   sm
                   title="orders.locate"
                 />

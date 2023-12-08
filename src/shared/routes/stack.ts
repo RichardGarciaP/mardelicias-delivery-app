@@ -12,7 +12,7 @@ export type RootStackParamList = {
   orders: undefined;
   editProfile: undefined;
   eReceipt: {id: number};
-  location: undefined;
+  location: {latitude: number; longitude: number};
 };
 export type RouteItem = {
   path: keyof RootStackParamList;
