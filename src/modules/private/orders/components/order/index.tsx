@@ -15,7 +15,6 @@ import {Button} from '@/shared/components/buttons';
 import {useNavigation} from '@react-navigation/native';
 import {NavigationProps} from '@/shared/routes/stack';
 import {format} from 'date-fns';
-import openMap from 'react-native-open-maps';
 import {updateOrder} from '@/shared/services/orders/orders';
 import {mutate} from 'swr';
 
@@ -35,8 +34,7 @@ export default function Order({order, track = true, map = false}: OrderProps) {
     setQty(order.products.reduce((total, product) => total + product.qty, 0));
   }, [order]);
 
-  const openLocation = (latitude: number, longitude: number) =>
-    openMap({latitude, longitude, navigate: true});
+  const openLocation = (latitude: number, longitude: number) => {};
 
   const setToCompleted = async () => {
     Alert.alert('Advertencia', '¿Desea marcar esta orden como entregada?', [
