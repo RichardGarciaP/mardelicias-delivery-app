@@ -1,4 +1,9 @@
 {
-  "name": "plantify",
-  "displayName": "plantify"
+  "name": "Mardelicias Repartidor",
+  "displayName": "Mardelicias Repartidor",
+  "permissions":[
+    "LOCATION",
+    "ACCESS_COARSE_LOCATION",
+    "ACCESS_FINE_LOCATION"
+  ]
 }

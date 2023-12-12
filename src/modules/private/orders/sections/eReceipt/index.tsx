@@ -200,7 +200,9 @@ export default function EReceipt({route}: Props) {
                   width: normalize(modalWidth - 20),
                   height: normalize(modalHeight - 60),
                 }}
-                source={{uri: order.voucher_url}}
+                source={{
+                  uri: `https://nmswwbindwiwxgeravfq.supabase.co/storage/v1/object/public/vouchers/${order.voucher_url}`,
+                }}
               />
             </View>
           </View>
