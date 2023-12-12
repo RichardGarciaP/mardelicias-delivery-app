@@ -15,6 +15,7 @@ import {UserDTO} from '@/shared/DTO';
 import {storage} from '@/shared/helpers';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {signInWithEmail} from '@/shared/services/login/login';
+import {USERS_TYPE_DEFINITIONS} from '@/shared/constants/global';
 
 export default function Login() {
   const navigation = useNavigation<NavigationProps>();
@@ -41,6 +42,13 @@ export default function Login() {
 
     if (error) {
       setErrors({submit: error.message});
+      setStatus({success: false});
+      setSubmitting(false);
+      return;
+    }
+
+    if (data.user.user_metadata.role !== USERS_TYPE_DEFINITIONS.DRIVER) {
+      setErrors({submit: 'Acceso no permitido'});
       setStatus({success: false});
       setSubmitting(false);
       return;

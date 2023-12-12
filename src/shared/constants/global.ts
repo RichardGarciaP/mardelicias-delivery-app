@@ -30,3 +30,7 @@ export const TAB_LIST = [
     active: false,
   },
 ];
+
+export const USERS_TYPE_DEFINITIONS = {
+  DRIVER: 'repartidor',
+};
