@@ -24,7 +24,7 @@ import {format} from 'date-fns';
 import {close, phone, vocher} from '@/shared/assets/icons';
 import {palette, semantic} from '@/shared/constants/colors';
 import {Text} from 'react-native-elements';
-import {PAYMENT_METHODS} from '@/shared/constants/global';
+import {PAYMENT_METHODS, currencyType} from '@/shared/constants/global';
 
 interface Props extends StackScreenProps<RootStackParamList, 'eReceipt'> {}
 
@@ -161,7 +161,9 @@ export default function EReceipt({route}: Props) {
                   {product.name}
                 </Typography>
                 <Typography style={styles.valueInnerSection} translate={false}>
-                  {`${product.price} (x${product.qty})`}
+                  {`${currencyType} ${parseFloat(product.price).toFixed(2)} (x${
+                    product.qty
+                  })`}
                 </Typography>
               </View>
             ))}

@@ -19,13 +19,13 @@ const ResumeTransaction = ({data}: Props) => {
       <View style={styles.containerResumeText}>
         <Typography>{'Pendiente'}</Typography>
         <Typography translate={false}>
-          {currencyType} {data?.payment_pending}
+          {currencyType} {data?.payment_pending?.toFixed(2)}
         </Typography>
       </View>
       <View style={styles.containerResumeText}>
         <Typography>{'checkout.total'}</Typography>
         <Typography translate={false}>
-          {currencyType} {data?.total}
+          {currencyType} {data?.total.toFixed(2)}
         </Typography>
       </View>
     </View>
