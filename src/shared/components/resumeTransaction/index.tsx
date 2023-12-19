@@ -3,13 +3,13 @@ import {styles} from './styles';
 import {View} from 'react-native';
 import Typography from '@/shared/components/typography';
 import {currencyType} from '@/shared/constants/global';
+import {Order} from '@/shared/DTO';
 
 interface Props {
-  total: number;
-  qty: number;
+  data: Order;
 }
 
-const ResumeTransaction = ({total, qty}: Props) => {
+const ResumeTransaction = ({data}: Props) => {
   return (
     <View style={styles.resume}>
       {/* <View style={styles.containerResumeText}>
@@ -17,9 +17,15 @@ const ResumeTransaction = ({total, qty}: Props) => {
         <Typography translate={false}>{qty}</Typography>
       </View> */}
       <View style={styles.containerResumeText}>
+        <Typography>{'Pendiente'}</Typography>
+        <Typography translate={false}>
+          {currencyType} {data?.payment_pending}
+        </Typography>
+      </View>
+      <View style={styles.containerResumeText}>
         <Typography>{'checkout.total'}</Typography>
         <Typography translate={false}>
-          {currencyType} {total}
+          {currencyType} {data?.total}
         </Typography>
       </View>
     </View>

@@ -166,10 +166,7 @@ export default function EReceipt({route}: Props) {
               </View>
             ))}
           </View>
-          <ResumeTransaction
-            total={data[0].total}
-            qty={data[0].products.length}
-          />
+          <ResumeTransaction data={data[0]} />
         </View>
       </Wrapper>
       {isOpenImage && isTransfer && (

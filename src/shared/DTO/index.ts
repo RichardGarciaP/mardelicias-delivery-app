@@ -149,6 +149,7 @@ export interface Order {
   users?: Client;
   latitude: string;
   longitude: string;
+  payment_pending?: number;
 }
 
 export interface Product {
