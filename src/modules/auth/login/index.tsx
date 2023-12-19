@@ -72,8 +72,8 @@ export default function Login() {
         </View>
         <Formik
           initialValues={{
-            email: 'ruben@gmail.com',
-            password: 'qwerty00',
+            email: '',
+            password: '',
             submit: '',
           }}
           validationSchema={validations}
