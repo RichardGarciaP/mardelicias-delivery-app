@@ -8,7 +8,6 @@ export const UserProvider = ({children}) => {
 
   const getLocalUser = async () => {
     const userLocal = await storage.get('user');
-    console.log(userLocal, 'desde local storage');
     setUser(userLocal);
     return userLocal;
   };
