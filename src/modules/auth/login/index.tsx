@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, TouchableOpacity, Image, Text} from 'react-native';
 import {styles} from './styles';
 import TitleAuth from '@/shared/components/titleAuth';
@@ -16,10 +16,12 @@ import {storage} from '@/shared/helpers';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {signInWithEmail} from '@/shared/services/login/login';
 import {USERS_TYPE_DEFINITIONS} from '@/shared/constants/global';
+import {UserContext} from '@/context/UserContext';
 
 export default function Login() {
   const navigation = useNavigation<NavigationProps>();
   const [isSecureActive, setIsSecureActive] = React.useState(true);
+  const {user, getLocalUser, setLocalUser} = React.useContext(UserContext);
 
   const validations = Yup.object({
     email: Yup.string()
@@ -33,6 +35,17 @@ export default function Login() {
   const togglePassword = () => {
     setIsSecureActive(!isSecureActive);
   };
+
+  const loadpreviewSession = async () => {
+    const currentUser = await getLocalUser();
+    if (currentUser) {
+      navigation.push('orders');
+    }
+  };
+
+  useEffect(() => {
+    loadpreviewSession();
+  }, []);
 
   const onSubmit = async (
     values: UserDTO,
@@ -56,8 +69,7 @@ export default function Login() {
 
     setStatus({success: true});
     setSubmitting(false);
-    await storage.create('user', data.user);
-    await storage.create('session', data.session);
+    await setLocalUser(data.user);
     navigation.push('orders');
   };
 

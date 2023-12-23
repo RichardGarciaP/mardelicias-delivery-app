@@ -48,7 +48,7 @@ const Location = ({route}: Props) => {
       <CustomStatusBar />
       <View style={styles.topSpace} />
       <View style={styles.headerBack}>
-        <HeaderWithIcon title="Dirección" />
+        <HeaderWithIcon title="Dirección" enablePressable />
       </View>
       <View style={styles.mapContainer}>
         <MapView

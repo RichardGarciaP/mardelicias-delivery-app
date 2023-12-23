@@ -10,11 +10,12 @@ import useDarkMode from '@/shared/hooks/useDarkMode';
 import {useSession, useUser} from '@supabase/auth-helpers-react';
 import {signOut} from '@/shared/services/login/login';
 import {storage} from '@/shared/helpers';
+import {UserContext} from '@/context/UserContext';
 
 export default function Header() {
   const {isDarkMode} = useDarkMode();
   const {navigate} = useNavigation<NavigationProps>();
-  const session = useSession();
+  const {user} = React.useContext(UserContext);
 
   const closeSession = async () => {
     await signOut();
@@ -34,13 +35,12 @@ export default function Header() {
         />
         <View>
           <Typography style={styles.nameUser} translate={false}>
-            {session?.user?.user_metadata?.first_name}{' '}
-            {session?.user?.user_metadata?.last_name}
+            {user?.user_metadata?.first_name} {user?.user_metadata?.last_name}
           </Typography>
           <View style={styles.row}>
             <Icon customStyles={styles.iconLocation} icon={location} />
             <Typography style={styles.location} translate={false}>
-              {session?.user?.user_metadata?.city}
+              {user?.user_metadata?.city}
             </Typography>
           </View>
         </View>

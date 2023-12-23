@@ -3,7 +3,7 @@ import {getOrders} from '../services/orders/orders';
 import {useUser} from '@supabase/auth-helpers-react';
 import {Order} from '../DTO';
 import {useEffect, useState} from 'react';
-import {PostgrestError} from '@supabase/supabase-js';
+import {PostgrestError, User} from '@supabase/supabase-js';
 
 interface UserOrderProps {
   data: Order[] | null | undefined;
@@ -12,9 +12,8 @@ interface UserOrderProps {
   error: PostgrestError | null;
 }
 
-const useOrders = (status: string): UserOrderProps => {
+const useOrders = (status: string, user: User): UserOrderProps => {
   const ENTITY = 'orders';
-  const user = useUser();
 
   const response = useSWR(user?.id ? `/${ENTITY}` : null, () =>
     getOrders(status, user!.id),

@@ -29,7 +29,7 @@ export default function HeaderWithIcon({
         <Pressable
           onPress={goBack}
           android_ripple={{color: palette.main.p200, borderless: true}}
-          style={[styles.arrowBack]}>
+          style={styles.arrowBack}>
           <Icon customStyles={stylesIcon} icon={icon ? icon : arrowBack} />
         </Pressable>
       ) : (

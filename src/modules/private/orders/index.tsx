@@ -13,11 +13,15 @@ import useOrders from '@/shared/hooks/useOrders';
 import {TAB_LIST} from '@/shared/constants/global';
 import {mutate} from 'swr';
 import {Image} from 'react-native-elements';
+import {UserContext} from '@/context/UserContext';
 
 export default function Orders() {
   const [currentTab, setCurrentTab] = useState<string>(TAB_LIST[0].id);
+  const {user} = React.useContext(UserContext);
+
   const {data, error, isLoading, isValidating} = useOrders(
     currentTab ? currentTab : TAB_LIST[0].id,
+    user,
   );
 
   useEffect(() => {

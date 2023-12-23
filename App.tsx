@@ -9,6 +9,7 @@ import i18n from 'i18next';
 import {SessionContextProvider} from '@supabase/auth-helpers-react';
 import {supabase} from '@/shared/services/client';
 import {PremissionsProvider} from '@/context/PermissionsContext';
+import {UserProvider} from '@/context/UserContext';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -31,19 +32,21 @@ function App(): JSX.Element {
     <SessionContextProvider supabaseClient={supabase}>
       <NavigationContainer>
         <PremissionsProvider>
-          <Stack.Navigator
-            initialRouteName={'login'}
-            screenOptions={{headerShown: false}}>
-            {RoutesStack.map(route => {
-              return (
-                <Stack.Screen
-                  key={route.path}
-                  name={route.path}
-                  component={route.component}
-                />
-              );
-            })}
-          </Stack.Navigator>
+          <UserProvider>
+            <Stack.Navigator
+              initialRouteName={'login'}
+              screenOptions={{headerShown: false}}>
+              {RoutesStack.map(route => {
+                return (
+                  <Stack.Screen
+                    key={route.path}
+                    name={route.path}
+                    component={route.component}
+                  />
+                );
+              })}
+            </Stack.Navigator>
+          </UserProvider>
         </PremissionsProvider>
       </NavigationContainer>
     </SessionContextProvider>
